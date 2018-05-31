@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+			var app = {
+				sendSms: function() {
+					var number = document.getElementById('numberTxt').value.toString(); /* iOS: ensure number is actually a string */
+					var message = document.getElementById('messageTxt').value;
+					console.log("number=" + number + ", message= " + message);
+
+					//CONFIGURATION
+					var options = {
+						replaceLineBreaks: false, // true to replace \n by a new line, false by default
+						android: {
+							intent: 'INTENT'  // send SMS with the native android SMS messaging
+							//intent: '' // send SMS without open any other app
+						}
+					};
+
+					var success = function () { alert('Message sent successfully'); };
+					var error = function (e) { alert('Message Failed:' + e); };
+					sms.send(number, message, options, success, error);
+				}
+			};
+		</script>
+    </body>
+    <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+	<textarea id="messageTxt" placeholder="Enter message"></textarea>
+	<input type="button" onclick="app.sendSms()" value="Send SMS" />
+</html>

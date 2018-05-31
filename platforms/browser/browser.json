@@ -1,0 +1,28 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-sms-plugin/www/sms.js",
+            "id": "cordova-sms-plugin.Sms",
+            "pluginId": "cordova-sms-plugin",
+            "clobbers": [
+                "window.sms"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-sms-plugin": "0.1.11"
+    }
+}

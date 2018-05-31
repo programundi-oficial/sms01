@@ -1,0 +1,10 @@
+{
+    "cordova-sms-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/cordova-sms/cordova-sms-plugin.git"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
