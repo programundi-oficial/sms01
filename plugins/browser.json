@@ -9,7 +9,17 @@
     "installed_plugins": {
         "cordova-sms-plugin": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-local-notification": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        }
+    }
 }

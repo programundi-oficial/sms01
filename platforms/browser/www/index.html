@@ -28,8 +28,21 @@
 					sms.send(number, message, options, success, error);
 				}
 			};
+			function teste01(){
+				
+				cordova.plugins.notification.local.schedule({
+					title: 'TESTE RODRIGO',
+					text: 'teste aqui o texto detalhe',
+					foreground: true
+				});
+				
+			}
+			
 		</script>
     </body>
+    <button onClick="teste01();">teste notficacao</button>
+    <br>
+    <br>
     <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
 	<textarea id="messageTxt" placeholder="Enter message"></textarea>
 	<input type="button" onclick="app.sendSms()" value="Send SMS" />
