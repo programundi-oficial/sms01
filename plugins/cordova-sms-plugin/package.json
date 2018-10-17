@@ -75,7 +75,7 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=3.0.0"
+      "version": ">=4.0.0"
     }
   ],
   "gitHead": "26ee2258b2f9c619e1327890f447d7936811d61b",
