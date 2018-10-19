@@ -54,13 +54,14 @@ sendSms: function() {
 }
 };
 */
-var app = {
+var app2 = {
     checkSMSPermission: function() {
         var success = function (hasPermission) { 
             if (hasPermission) {
                 alert("aqui enviar");
             }
             else {
+				alert("aqui deu merda");
                 // show a helpful message to explain why you need to require the permission to send a SMS
                 // read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
             }
