@@ -10,11 +10,17 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "cordova-android": "^7.0.0",
+    "cordova-plugin-whitelist": "^1.3.3",
     "cordova-sms-plugin": "^0.1.13"
   },
   "cordova": {
     "plugins": {
-      "cordova-sms-plugin": {}
-    }
+      "cordova-sms-plugin": {},
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
