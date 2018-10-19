@@ -25,6 +25,7 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
 function teste(){
 	alert("aquiiii");
 }
