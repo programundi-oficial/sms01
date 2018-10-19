@@ -7,19 +7,22 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-sms-plugin": {
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
-        "cordova-plugin-local-notification": {
+        "phonegap-plugin-push": {
+            "SENDER_ID": "XXXXXXX",
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-badge": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        }
-    }
+    "dependent_plugins": {}
 }
