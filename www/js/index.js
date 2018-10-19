@@ -52,7 +52,7 @@ sendSms: function() {
 	sms.send(number, message, options, success, error);
 }
 };
-
+*/
 var app = {
 checkSMSPermission: function() {
 	var success = function (hasPermission) { 
@@ -98,5 +98,5 @@ requestSMSPermission: function() {
 	var error = function (e) { alert('Something went wrong:' + e); };
 	sms.hasPermission(success, error);
 }
-};*/
+};
 app.initialize();
