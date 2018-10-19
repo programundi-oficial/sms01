@@ -21,6 +21,105 @@
 	
 		<button onclick='teste_click()'>rodrigo teste</button>
 	</div>
+	<div>
+            <div class="app">
+                <h1>Local-Notification Example</h1>
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+            </div>
+
+            
+            <h2 class="section" style="padding-top:180px;">Permission (iOS8)</h2>
+            <div class="container">
+                <div onclick="hasPermission()">Granted?<br /><span>hasPermission()</span></div>
+                <div onclick="registerPermission()">Register<br /><span>registerPermission()</span></div>
+            </div>
+
+            
+            <h2 class="section">Schedule</h2>
+            <div class="container">
+                <div onclick="schedule()">Single<br /><span>schedule(1)</span></div>
+                <div onclick="scheduleMultiple()">Multiple<br /><span>schedule(1, 2, 3)</span></div>
+            </div>
+            <div class="container">
+                <div onclick="scheduleDelayed()">In 5 sec<br /><span>schedule(1, firstAt:later)</span></div>
+                <div onclick="scheduleMinutely()">Every min<br /><span>schedule(1, every:minute)</span></div>
+            </div>
+
+            
+            <h2 class="section">Update</h2>
+            <div class="container">
+                <div onclick="update()">Text<br /><span>update(1)</span></div>
+                <div onclick="updateInterval()">Interval<br /><span>update(1, every:minute)</span></div>
+            </div>
+
+            
+            <h2 class="section">Clear</h2>
+            <div class="container">
+                <div onclick="clearSingle()">Single<br /><span>clear(1)</span></div>
+                <div onclick="clearMultiple()">Multiple<br /><span>clear(2, 3)</span></div>
+            </div>
+            <div class="container">
+                <div onclick="clearAll()">All<br /><span>clearAll()</span></div>
+            </div>
+
+            
+            <h2 class="section">Cancel</h2>
+            <div class="container">
+                <div onclick="cancel()">Single<br /><span>cancel(1)</span></div>
+                <div onclick="cancelMultiple()">Multiple<br /><span>cancel(2, 3)</span></div>
+            </div>
+            <div class="container">
+                <div onclick="cancelAll()">All<br /><span>cancelAll()</span></div>
+            </div>
+
+            
+            <h2 class="section">Presence</h2>
+            <div class="container">
+                <div onclick="isScheduled()">Scheduled?<br /><span>isScheduled(1)</span></div>
+                <div onclick="isTriggered()">Triggered?<br /><span>isTrigered(1)</span></div>
+            </div>
+            <div class="container">
+                <div onclick="isPresent()">Present?<br /><span>present(1)</span></div>
+            </div>
+
+            
+            <h2 class="section">ID's</h2>
+            <div class="container">
+                <div onclick="getScheduledIds()">Scheduled<br /><span>getScheduledIds()</span></div>
+                <div onclick="getTriggeredIds()">Triggered<br /><span>getTriggeredIds()</span></div>
+            </div>
+            <div class="container">
+                <div onclick="getIds()">All<br /><span>getIds()</span></div>
+            </div>
+
+            
+            <h2 class="section">Notifications</h2>
+            <div class="container">
+                <div onclick="getScheduled()">Scheduled<br /><span>getScheduled()</span></div>
+                <div onclick="getTriggered()">Triggered<br /><span>getTrigered()</span></div>
+            </div>
+            <div class="container">
+                <div onclick="get()">Single<br /><span>get(1)</span></div>
+                <div onclick="getMultiple()">Multiple<br /><span>get(1, 2)</span></div>
+            </div>
+            <div class="container">
+                <div onclick="getAll()">All<br /><span>getAll()</span></div>
+            </div>
+
+            
+            <h2 class="section">Defaults</h2>
+            <div class="container">
+                <div onclick="setDefaultTitle()">Change title<br /><span>setDefaults(title:"...")</span></div>
+            </div>
+
+            
+            <div class="copyright">
+                © 2013-2015 appPlant
+            </div>
+        </div>
 	</body>
 	<script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
