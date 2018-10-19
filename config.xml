@@ -19,10 +19,10 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
+    
+	<preference name="phonegap-version" value="cli-7.1.0" />
+	<preference name="pgb-builder-version" value="2" />
+	<engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-local-notification" spec="https://github.com/katzer/cordova-plugin-local-notifications.git" />
     <engine name="android" spec="~7.1.1" />
 </widget>
