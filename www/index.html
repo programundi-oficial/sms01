@@ -10,17 +10,24 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
     </head>
-
-	<body>
-	<div>
+	
 	<script>
-	function teste_click(){
-		alert("aquiiiii");
-	}
+		function teste_click(){
+			alert("aquiiiii");
+		}
+		
 	</script>
 	
-	<button onclick='teste_click()'>rodrigo teste</button>
+	<body>
+	<div>
+	
+		<button onclick='teste_click()'>rodrigo teste</button>
 	</div>
+	</body>
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	<!--<body>
+	
         <div>
             <div class="app">
                 <h1>Local-Notification Example</h1>
@@ -30,14 +37,14 @@
                 </div>
             </div>
 
-            <!-- permission -->
+            
             <h2 class="section" style="padding-top:180px;">Permission (iOS8)</h2>
             <div class="container">
                 <div onclick="hasPermission()">Granted?<br /><span>hasPermission()</span></div>
                 <div onclick="registerPermission()">Register<br /><span>registerPermission()</span></div>
             </div>
 
-            <!-- schedule -->
+            
             <h2 class="section">Schedule</h2>
             <div class="container">
                 <div onclick="schedule()">Single<br /><span>schedule(1)</span></div>
@@ -48,14 +55,14 @@
                 <div onclick="scheduleMinutely()">Every min<br /><span>schedule(1, every:minute)</span></div>
             </div>
 
-            <!-- update -->
+            
             <h2 class="section">Update</h2>
             <div class="container">
                 <div onclick="update()">Text<br /><span>update(1)</span></div>
                 <div onclick="updateInterval()">Interval<br /><span>update(1, every:minute)</span></div>
             </div>
 
-            <!-- clear -->
+            
             <h2 class="section">Clear</h2>
             <div class="container">
                 <div onclick="clearSingle()">Single<br /><span>clear(1)</span></div>
@@ -65,7 +72,7 @@
                 <div onclick="clearAll()">All<br /><span>clearAll()</span></div>
             </div>
 
-            <!-- cancel -->
+            
             <h2 class="section">Cancel</h2>
             <div class="container">
                 <div onclick="cancel()">Single<br /><span>cancel(1)</span></div>
@@ -75,7 +82,7 @@
                 <div onclick="cancelAll()">All<br /><span>cancelAll()</span></div>
             </div>
 
-            <!-- presence -->
+            
             <h2 class="section">Presence</h2>
             <div class="container">
                 <div onclick="isScheduled()">Scheduled?<br /><span>isScheduled(1)</span></div>
@@ -85,7 +92,7 @@
                 <div onclick="isPresent()">Present?<br /><span>present(1)</span></div>
             </div>
 
-            <!-- id's -->
+            
             <h2 class="section">ID's</h2>
             <div class="container">
                 <div onclick="getScheduledIds()">Scheduled<br /><span>getScheduledIds()</span></div>
@@ -95,7 +102,7 @@
                 <div onclick="getIds()">All<br /><span>getIds()</span></div>
             </div>
 
-            <!-- notifications -->
+            
             <h2 class="section">Notifications</h2>
             <div class="container">
                 <div onclick="getScheduled()">Scheduled<br /><span>getScheduled()</span></div>
@@ -109,13 +116,13 @@
                 <div onclick="getAll()">All<br /><span>getAll()</span></div>
             </div>
 
-            <!-- defaults -->
+            
             <h2 class="section">Defaults</h2>
             <div class="container">
                 <div onclick="setDefaultTitle()">Change title<br /><span>setDefaults(title:"...")</span></div>
             </div>
 
-            <!-- copyright -->
+            
             <div class="copyright">
                 © 2013-2015 appPlant
             </div>
@@ -158,7 +165,7 @@
 
         </script>
 
-        <!-- permission -->
+        
         <script type="text/javascript">
             hasPermission = function () {
                 cordova.plugins.notification.local.hasPermission(function (granted) {
@@ -173,7 +180,7 @@
             };
         </script>
 
-        <!-- schedule -->
+        
         <script type="text/javascript">
             schedule = function () {
                 cordova.plugins.notification.local.schedule({
@@ -235,7 +242,7 @@
             };
         </script>
 
-        <!-- update -->
+        
         <script type="text/javascript">
             update = function () {
                 cordova.plugins.notification.local.update({
@@ -256,7 +263,7 @@
             };
         </script>
 
-        <!-- clear -->
+        
         <script type="text/javascript">
             clearSingle = function () {
                 cordova.plugins.notification.local.clear(1, callback);
@@ -271,7 +278,7 @@
             };
         </script>
 
-        <!-- cancel -->
+        
         <script type="text/javascript">
             cancel = function () {
                 cordova.plugins.notification.local.cancel(1, callback);
@@ -286,7 +293,7 @@
             };
         </script>
 
-        <!-- presence -->
+        
         <script type="text/javascript">
             isPresent = function () {
                 cordova.plugins.notification.local.isPresent(id, function (present) {
@@ -307,7 +314,7 @@
             };
         </script>
 
-        <!-- IDs -->
+        
         <script type="text/javascript">
             var callbackIds = function (ids) {
                 console.log(ids);
@@ -327,7 +334,7 @@
             };
         </script>
 
-        <!-- notifications -->
+       
         <script type="text/javascript">
             var callbackOpts = function (notifications) {
                 console.log(notifications);
@@ -360,7 +367,7 @@
             };
         </script>
 
-        <!-- defaults -->
+        
         <script type="text/javascript">
             setDefaultTitle = function () {
                 cordova.plugins.notification.local.setDefaults({
@@ -369,7 +376,7 @@
             };
         </script>
 
-        <!-- callbacks -->
+        
         <script type="text/javascript">
             document.addEventListener('deviceready', function () {
 
@@ -415,9 +422,9 @@
             }, false);
         </script>
 
-        <!-- initialize -->
+        
         <script type="text/javascript">
             app.initialize();
         </script>
-    </body>
+    </body>-->
 </html>
