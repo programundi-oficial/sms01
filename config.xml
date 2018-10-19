@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>sms01</name>
+    <name>sms_02</name>
     <description>
         A blank PhoneGap app.
     </description>
@@ -9,6 +9,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" />
-    <plugin name="cordova-plugin-local-notification" spec="https://github.com/katzer/cordova-plugin-local-notifications.git" />
+    <engine name="android" spec="~7.1.1" />
 </widget>
