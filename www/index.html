@@ -8,11 +8,11 @@
     <body>
         <script type="text/javascript" src="cordova.js"></script>
         <script>
-			/*var app = {
+			var app = {
 				sendSms: function() {
 					var number = document.getElementById('numberTxt').value.toString(); 
 					var message = document.getElementById('messageTxt').value;
-					console.log("number=" + number + ", message= " + message);
+					alert("number=" + number + ", message= " + message);
 
 					//CONFIGURATION
 					var options = {
@@ -27,8 +27,8 @@
 					var error = function (e) { alert('Message Failed:' + e); };
 					sms.send(number, message, options, success, error);
 				}
-			};*/
-			var app = {
+			};
+			/*var app = {
 				checkSMSPermission: function() {
 					var success = function (hasPermission) { 
 						if (hasPermission) {
@@ -73,9 +73,9 @@
 					var error = function (e) { alert('Something went wrong:' + e); };
 					sms.hasPermission(success, error);
 				}
-			};
+			};*/
 			function teste01(){
-				
+				alert("aquiii');
 				cordova.plugins.notification.local.schedule({
 					title: 'TESTE RODRIGO',
 					text: 'teste aqui o texto detalhe',
