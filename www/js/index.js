@@ -32,8 +32,8 @@ var app = {
 function teste_click(){
 	alert("aquiiiii");
 }
-/*
-var app = {
+
+var app3 = {
 sendSms: function() {
 	var number = document.getElementById('numberTxt').value.toString(); 
 	var message = document.getElementById('messageTxt').value;
@@ -53,7 +53,7 @@ sendSms: function() {
 	sms.send(number, message, options, success, error);
 }
 };
-*/
+
 var app2 = {
     checkSMSPermission: function() {
         var success = function (hasPermission) { 
