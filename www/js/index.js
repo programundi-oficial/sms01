@@ -25,6 +25,9 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+function teste(){
+	alert("aquiiii");
+}
 /*var app = {
 sendSms: function() {
 	var number = document.getElementById('numberTxt').value.toString(); 
@@ -44,7 +47,8 @@ sendSms: function() {
 	var error = function (e) { alert('Message Failed:' + e); };
 	sms.send(number, message, options, success, error);
 }
-};*/
+};
+
 var app = {
 checkSMSPermission: function() {
 	var success = function (hasPermission) { 
@@ -90,5 +94,5 @@ requestSMSPermission: function() {
 	var error = function (e) { alert('Something went wrong:' + e); };
 	sms.hasPermission(success, error);
 }
-};
+};*/
 app.initialize();
