@@ -1,10 +1,26 @@
 {
-  "cordova-sms-plugin": {
+  "cordova-plugin-local-notification": {
     "source": {
       "type": "registry",
-      "id": "cordova-sms-plugin"
+      "id": "https://github.com/katzer/cordova-plugin-local-notifications.git"
     },
     "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-badge": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-badge@>=0.8.5"
+    },
+    "is_top_level": false,
     "variables": {}
   },
   "cordova-plugin-whitelist": {

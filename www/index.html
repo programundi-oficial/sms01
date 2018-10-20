@@ -1,35 +1,410 @@
 <!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
 
-<html>
-    <head>
-        
-        
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-		<br>
-		<br>
-		<button onclick='teste_click()'>rodrigo teste</button>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <title>APP - SET FUNCIONAL</title>
+  <!-- InstanceEndEditable -->
+  <meta name="theme-color" content="#d56c0f">
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+  <!-- Vector CSS -->
+  <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>  
+  <!--Full Calendar Css-->
+  <link href="assets/plugins/fullcalendar/css/fullcalendar.min.css" rel='stylesheet'/>  
+  <!-- simplebar CSS-->
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+  <!-- Bootstrap core CSS-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- animate CSS-->
+  <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+  <!-- Icons CSS-->
+  <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+  <!-- Sidebar CSS-->
+  <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+  <!-- Custom Style-->
+  <link href="assets/css/app-style.css" rel="stylesheet"/>
+  
+  <!-- InstanceBeginEditable name="head" -->
+  <!-- InstanceEndEditable -->
+</head>
+<style>
+	.brack{
+		clear: both !important;
+	}	
+	.align-self-center i {
+		font-size: 30px;
+	}
+</style>
+<body>
+<!-- InstanceBeginEditable name="css" -->
+	
+<!-- InstanceEndEditable -->
+<!-- Start wrapper-->
+ <div id="wrapper">
+ 
+  <!--Start sidebar-wrapper-->
+   <div id="sidebar-wrapper" style="background: #000;" data-simplebar="" data-simplebar-auto-hide="true">
+     <div class="brand-logo">
+      <a href="index.html">
+       <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+       <h5 class="logo-text">SET FUNCIONAL</h5>
+     </a>
+	 </div>
+	 <ul class="sidebar-menu do-nicescrol">
+      <li class="sidebar-header">NAVEGAÇÃO PRINCIPAL</li>
+      <li>
+        <a href="index.html" class="waves-effect">
+         <img src="assets/images/app_pb.png">
+          <!--<i class="icon-home"></i>--> <span>Início</span>          
+        </a>
+      </li>
+       <li>
+        <a href="#" class="waves-effect">
+         <img src="assets/images/conversation_pb.png">
+          <!--<i class="fa fa-wechat"></i>--> <span>Mensagens</span>          
+        </a>
+      </li>
+      <li>
+        <a href="resumo-diario.html" class="waves-effect">
+          <img src="assets/images/calendar_pb.png">
+          <!--<i class="icon-event"></i>--> <span>Resumo Diário</span>          
+        </a>
+      </li>
+       <li>
+        <a href="frequencia_aluno.html" class="waves-effect">
+         <img src="assets/images/clipboard_pb.png">
+          <!--<i class="ti-layout-list-thumb-alt"></i>--> <span>Planos de Treino</span>          
+        </a>
+      </li>
+      <li>
+        <a href="calendario_escolar.html" class="waves-effect">
+          <img src="assets/images/dumbbell_pb.png">
+          <!--<i class="icon-calendar"></i>--> <span>Guia de Exercícios</span>          
+        </a>
+      </li>
+       <li>
+        <a href="atividades.html" class="waves-effect">
+          <img src="assets/images/scale_pb.png">
+          <!--<i class="icon-note"></i>--> <span>Meu Peso</span>          
+        </a>        
+      </li>
+      <li>
+        <a href="#" class="waves-effect">
+          <img src="assets/images/tape-measure_pb.png">
+          <!--<i class="icon-note"></i>--> <span>Minhas Medidas</span>          
+        </a>        
+      </li>
+      <li>
+        <a href="comunicados.html" class="waves-effect">
+         <img src="assets/images/heart_pb.png">
+          <!--<i class="icon-envelope"></i>--> <span>Meu Corpo</span>          
+        </a>
+      </li>
+     
+      <li>
+        <a href="javaScript:void();" class="waves-effect">
+         <img src="assets/images/setting_pb.png">
+          <!--<i class="icon-settings"></i>--> <span>Configurações</span>         
+        </a>       
+       </li>
+	   
+    </ul>
+	 
+   </div>
+   <!--End sidebar-wrapper-->
+
+<!--Start topbar header-->
+<header class="topbar-nav">
+ <nav class="navbar navbar-expand fixed-top gradient-scooter">
+  <ul class="navbar-nav mr-auto align-items-center">
+    <li class="nav-item">
+      <a class="nav-link toggle-menu" href="javascript:void();">
+       <i class="icon-menu menu-icon"></i>
+     </a>
+    </li>
+    
+  </ul>
+     
+  <ul class="navbar-nav align-items-center right-nav-link">
+    
+	<li class="nav-item">
+		<a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+			<i class="icon-envelope-open"></i>
+			<span class="badge badge-danger badge-up">24</span>
+		</a>     
+	</li>
+	<li class="nav-item">
+		<a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+			<i class="icon-bell"></i>
+			<span class="badge badge-primary badge-up">10</span>
+		</a>      
+	</li>
+    
+    <li class="nav-item">
+      <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
+        <span class="user-profile"><img src="assets/images/avatars/avatar-17.png" class="img-circle" alt="user avatar"></span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right">
+       <li class="dropdown-item user-details">
+        <a href="javaScript:void();">
+           <div class="media">
+             <div class="avatar"><img class="align-self-start mr-3" src="assets/images/avatars/avatar-17.png" alt="user avatar"></div>
+            <div class="media-body">
+            <h6 class="mt-2 user-title">Maria da Silva</h6>
+            <p class="user-subtitle">maria@gmail.com</p>
             </div>
+           </div>
+          </a>
+        </li>
+        <li class="dropdown-divider"></li>        
+        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Configurações</li>
+        <li class="dropdown-divider"></li>
+        <li class="dropdown-item"><i class="icon-power mr-2"></i> Sair</li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</header>
+<!--End topbar header-->
+
+<div class="clearfix"></div>
+	
+  <div class="content-wrapper">
+    <div class="container-fluid">
+    <!-- InstanceBeginEditable name="containerConteudo" -->
+		<style>
+			.card-body{
+				cursor: pointer;
+			}
+			.bg-pattern-primary:hover{
+				    background-color: #0563b1;
+			}
+		</style>
+		<script>
+			function direcionar(link){
+				location.href=link;
+			}
+
+		</script>
+	  
+      <div class="row mt-3">
+       
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('historico_de_notas.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+              
+              <div class="align-self-center  rounded-circle">
+                <!--<i class="fa fa-wechat text-white"></i>-->
+                <img src="assets/images/conversation.png">
+              </div>
+              
+              <div class="media-body ">
+                <h6 class="text-white">Mensagens</h6>
+                <span style="display: none" class="text-white">Total Orders</span>
+              </div>
+              
+             </div>
+            </div>
+          </div>
         </div>
-		<input id="numberTxt" placeholder="Enter mobile number" value="81983148310" type="tel" />
-		<br>
-		<textarea id="messageTxt" placeholder="Enter message"></textarea>
-		<br>
-		<input type="button" onclick="app3.sendSms()" value="Send SMS" />
-		<br>
-		<input type="button" onclick="app2.checkSMSPermission()" value="Send SMS2" />
+        
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('resumo-diario.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+               <div class="align-self-center  rounded-circle ">
+                <!--<i class="icon-event text-white"></i>-->
+                <img src="assets/images/calendar.png">
+                </div>
+               <div class="media-body ">
+                <h6 class="text-white">Resumo Diário</h6>
+				   <span style="display: none" class="text-white"></span>
+              </div>
+              
+            </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('calendario_escolar.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+              <div class="align-self-center  rounded-circle ">
+                <!--<i class="icon-calendar text-white"></i>-->
+                 <img src="assets/images/clipboard.png">
+                </div>
+              <div class="media-body ">
+                <h6 class="text-white">Plano de Treino</h6>
+                <span style="display: none" class="text-white">Total Revenue</span>
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('historico_de_notas.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+               <div class="align-self-center  rounded-circle ">
+                <!--<i class="icon-note text-white"></i>-->
+                 <img src="assets/images/dumbbell.png">
+               </div>
+              <div class="media-body ">
+                <h6 class="text-white">Guia de Exercícios</h6>
+                <span style="display: none" class="text-white">New Users</span>
+              </div>
+              
+             
+            </div>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('comunicados.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+              <div class="align-self-center  rounded-circle ">
+                <!--<i class="icon-envelope text-white"></i>-->
+                 <img src="assets/images/scale.png">
+               </div>
+               
+              <div class="media-body ">
+                <h6 class="text-white">Meu Peso</h6>
+                <span style="display: none" class="text-white">Total Orders</span>
+              </div>
+              
+              
+             </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('eventos.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+              
+              <div class="align-self-center  rounded-circle ">
+                <!--<i class="zmdi zmdi-cake text-white"></i>-->
+                <img src="assets/images/tape-measure.png">
+               </div>
+               <div class="media-body ">
+                <h6 class="text-white">Minhas Medidas</h6>
+                <span style="display: none" class="text-white">Total Expenses</span>
+              </div>
+              
+               
+                
+            </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('historico_de_notas.html')">
+            <div class="card-body">
+              <div class="media" style="display: block;text-align: center;">
+              
+              <div class="align-self-center  rounded-circle ">
+                <!--<i class="fa fa-medkit text-white"></i>-->
+                <img src="assets/images/heart.png">
+               </div>
+              <div class="media-body ">
+                <h6 class="text-white">Meu Corpo</h6>
+                <span style="display: none" class="text-white">Total Revenue</span>
+              </div>  
+              
+                
+            </div>
+            </div>
+          </div>
+        </div>
+       
+        
+        <div class="col-6 col-lg-6 col-xl-4">
+          <div class="card bg-pattern-primary" onClick="direcionar('historico_de_notas.html')">
+            <div class="card-body">             
+              <div class="media" style="display: block;text-align: center;">
+              
+				<div class="align-self-center rounded-circle">
+					<!--<i class="icon-settings text-white"></i>-->
+					<img src="assets/images/setting.png">
+				</div>
+            
+				<div class="media-body ">
+					<h6 class="text-white">Configurações</h6>
+					<span style="display: none" class="text-white">New Users</span>
+				</div>
+              
+            </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+		  
+    <!-- InstanceEndEditable -->
 		
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
-</html>
+      
+		  
+     
+
+    </div>
+    
+    
+   </div>
+   
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+   
+	
+	<!--Start footer-->
+	<footer class="footer">
+      <div class="container">
+        <div class="text-center">
+          2018 - SET FUNCIONAL
+        </div>
+      </div>
+    </footer>
+	<!--End footer-->
+   
+  </div><!--End wrapper-->
+  <!-- InstanceBeginEditable name="javaScript" -->
+	<!-- Bootstrap core JavaScript-->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+	
+  <!-- simplebar js -->
+  <script src="assets/plugins/simplebar/js/simplebar.js"></script>
+  <!-- waves effect js -->
+  <script src="assets/js/waves.js"></script>
+  <!-- sidebar-menu js -->
+  <script src="assets/js/sidebar-menu.js"></script>
+  <!-- Custom scripts -->
+  <script src="assets/js/app-script.js"></script>
+  
+  <!-- Vector map JavaScript -->
+  <script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+  <script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- Chart js -->
+  <script src="assets/plugins/Chart.js/Chart.min.js"></script>
+  <!-- Index js -->
+  <script src="assets/js/index.js"></script>
+	<!-- InstanceEndEditable -->
+
+  
+</body>
+
+
+<!-- InstanceEnd --></html>

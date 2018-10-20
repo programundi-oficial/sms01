@@ -1,13 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.yourname.helloword" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="Sms">
-        <param name="android-package" value="com.cordova.plugins.sms.Sms" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Badge">
+        <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
+    </feature>
+    <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
     </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>sms</name>
+    <name>Helloword</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -24,6 +30,4 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="phonegap-version" value="cli-7.1.0" />
-    <preference name="pgb-builder-version" value="2" />
 </widget>
