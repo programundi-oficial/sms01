@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-local-notification": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/katzer/cordova-plugin-local-notifications.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
