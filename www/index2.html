@@ -62,7 +62,7 @@
         			sendto[i] = sendto[i].trim();
         		}
         	}
-        	if(SMS) SMS.sendSMS(sendto, textmsg, function(){alert("ENVIADO");}, function(str){alert(str);});
+        	if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
         }
         function listSMS() {
     		updateData('');
@@ -142,49 +142,33 @@
         	$('span#intercept').text( 'intercept ' + (interceptEnabled ? 'ON' : 'OFF') );
         	$('button#enable_intercept').text( interceptEnabled ? 'Disable' : 'Enable' );
         }
-		function envio_automatico(id_mensagem,telefone_mensagem,descricao_mensagem){
-			SMS.sendSMS(telefone_mensagem, descricao_mensagem, function(){$("#historico_envio").append("<tr><td colspan='5'>ENVIADO</td></tr>");}, function(str){alert(str);});
-		}
-		function get_mensagens_servidor(){
-			
-			$.ajax({            
-				url: "http://sms.programundi.com.br/api/api.php",
-				 data: {					
-					s: "1"       
-				},
-				dataType: "json",
-				type: "POST",
-				success: function(json) {  
-					//alert("aqii"+json);
-					//return false;
-					for (var i = 0; i < json.length; i++) {                  
-						if(json[i].result == "true"){
-							$("#historico_envio").append("<tr><td>"+json[i].nome_sistema_envio+"</td><td>"+json[i].data_gravacao_mensagem+"</td><td>"+json[i].telefone_mensagem+"</td><td>"+json[i].descricao_mensagem+"</td><td><button onclick='envio_automatico(\""+json[i].id_mensagem+"\",\""+json[i].telefone_mensagem+"\",\""+json[i].descricao_mensagem+"\",);'>ENVIAR</button></td></tr>");                                    
-						}
-						else{
-							alert(json[i].p1);							 
-						}
-					}                
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-					alert("ERROR");					                   
-				}
-			});   
-		}
+
         </script>
         <div id="fullpage">
-            <p>ENVIO DE MENSAGEM AUTOMÁTICAS</p>
+            <p>Demo for SMS Plugin</p>
 
-			
-			
-            <button onclick="get_mensagens_servidor();">GET MENSAGENS SERVIDOR</button><br/>
+			To:<input type="text" size=16 id="sendto"/><br/>
+			Text:<textarea rows="5" cols="30" id="textmsg"></textarea><br/>
+			<button onclick="sendSMS();">Send</button>
             <hr/>
-             <a href="index2.html">ENVIO MANUAL</a><br/>
+            <button onclick="listSMS();">List Inbox (recent 10)</button>
             <hr/>
-            <table style="width: 100%;">
-            	<tbody id="historico_envio"></tbody>
-            </table>
             
+			<button onclick="startWatch();">Start Watch</button>
+            <button onclick="stopWatch();">Stop Watch</button>
+            <br/><div id='watching'></div>
+            <hr/>
+                
+            <span id='intercept'/>Intercept OFF</span><br/>
+			<button id='enable_intercept' onclick='toggleIntercept();'>Enable</button> 
+            <button onclick="restoreAllSMS();">Restore SMS</button>
+            <button onclick="deleteLastSMS();">Delete Last SMS</button>
+            <hr/>
+			
+            <button onclick="updateStatus('');updateData('');smsList.length=0;">Clear</button><br/>
+            
+            <div id='status'></div><hr/>
+            <div id='data' style='text-align:left;'></div>
        </div>
     </body>
 </html>
