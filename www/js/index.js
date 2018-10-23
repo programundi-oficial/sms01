@@ -35,5 +35,22 @@ function teste_ativar(){
 	cordova.plugins.backgroundMode.setEnabled(true);
 	alert("ativado");	
 }
-
+function data_atual(){
+    data = new Date();
+	
+	segu = data.getSeconds();
+	minu = data.getMinutes();
+	hora = data.getHours();
+    dia = data.getDate();
+    mes = data.getMonth();
+    ano = data.getFullYear();
+    mes = mes + 1;
+    if(dia <= 9){dia = "0"+dia;}
+    if(mes <= 9){mes = "0"+mes;}    
+    return dia+"/"+mes+"/"+ano+" "+hora+":"+minu+":"+segu;
+}
+function add_lista(){
+	$("#lista_teste").append("<tr><td>rodando</td><td>"+data_atual()+"</td></tr>");
+	setTimeout(add_lista,5000);
+}
 app.initialize();
