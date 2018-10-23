@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<html lang="pt"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
   <meta charset="utf-8"/>
@@ -9,6 +9,7 @@
   <meta name="author" content=""/>
   <!-- InstanceBeginEditable name="doctitle" -->
   <title>APP - SET FUNCIONAL</title>
+	
   <!-- InstanceEndEditable -->
   <meta name="theme-color" content="#d56c0f">
   <!--favicon-->
@@ -179,182 +180,35 @@
   <div class="content-wrapper">
     <div class="container-fluid">
     <!-- InstanceBeginEditable name="containerConteudo" -->
-		<style>
-			.card-body{
-				cursor: pointer;
-			}
-			.bg-pattern-primary:hover{
-				    background-color: #0563b1;
-			}
-		</style>
-		<script>
-			function direcionar(link){
-				location.href=link;
-			}
-
-		</script>
-	  
-      <div class="row mt-3">
-       
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('mensagens.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle">
-                <!--<i class="fa fa-wechat text-white"></i>-->
-                <img src="assets/images/conversation.png">
-              </div>
-              
-              <div class="media-body ">
-                <h6 class="text-white">Mensagens</h6>
-                <span style="display: none" class="text-white">Total Orders</span>
-              </div>
-              
-             </div>
-            </div>
-          </div>
-        </div>
+		<div class="row pt-2 pb-2">
+        <div class="col-12">
+		    <h4 class="page-title">Configurações</h4>
+		    <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Início</a></li>            
+            <li class="breadcrumb-item active" aria-current="page">Configurações</li>
+         </ol>
+	   </div>	   
+     </div>
+		<div class="row">
         
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('resumo_diario.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-               <div class="align-self-center  rounded-circle ">
-                <!--<i class="icon-event text-white"></i>-->
-                <img src="assets/images/calendar.png">
-                </div>
-               <div class="media-body ">
-                <h6 class="text-white">Resumo Diário</h6>
-				   <span style="display: none" class="text-white"></span>
-              </div>
-              
-            </div>
-            </div>
-          </div>
-        </div>
+        <div class="col-lg-12">
         
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('plano_de_treino.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              <div class="align-self-center  rounded-circle ">
-                <!--<i class="icon-calendar text-white"></i>-->
-                 <img src="assets/images/clipboard.png">
-                </div>
-              <div class="media-body">
-                <h6 class="text-white">Plano de Treino</h6>
-                <span style="display: none" class="text-white">Total Revenue</span>
-              </div>
-
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('guia_de_exercicios.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-               <div class="align-self-center  rounded-circle ">
-                <!--<i class="icon-note text-white"></i>-->
-                 <img src="assets/images/dumbbell.png">
-               </div>
-              <div class="media-body">
-                <h6 class="text-white">Guia de Exercícios</h6>
-                <span style="display: none" class="text-white">New Users</span>
-              </div>
-              
-             
-            </div>
-            </div>
-          </div>
-        </div>
-        
-         <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('meu_peso.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              <div class="align-self-center  rounded-circle ">
-                <!--<i class="icon-envelope text-white"></i>-->
-                 <img src="assets/images/scale.png">
-               </div>
-               
-              <div class="media-body">
-                <h6 class="text-white">Meu Peso</h6>
-                <span style="display: none" class="text-white">Total Orders</span>
-              </div>
-              
-              
-             </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('minhas_medidas.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle ">
-                <!--<i class="zmdi zmdi-cake text-white"></i>-->
-                <img src="assets/images/tape-measure.png">
-               </div>
-               <div class="media-body ">
-                <h6 class="text-white">Minhas Medidas</h6>
-                <span style="display: none" class="text-white">Total Expenses</span>
-              </div>
-              
-               
-                
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('meu_corpo.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle ">
-                <!--<i class="fa fa-medkit text-white"></i>-->
-                <img src="assets/images/heart.png">
-               </div>
-              <div class="media-body ">
-                <h6 class="text-white">Meu Corpo</h6>
-                <span style="display: none" class="text-white">Total Revenue</span>
-              </div>  
-              
-                
-            </div>
-            </div>
-          </div>
-        </div>
-       
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('configuracoes.html')">
-            <div class="card-body">             
-              <div class="media" style="display: block;text-align: center;">
-              
-				<div class="align-self-center rounded-circle">
-					<!--<i class="icon-settings text-white"></i>-->
-					<img src="assets/images/setting.png">
-				</div>
+         <div class="brack"></div>
+          <div class="card">
+             <div class="card-header text-uppercase">Configurações</div>
+             <div style="padding: 6px;">
             
-				<div class="media-body ">
-					<h6 class="text-white">Configurações</h6>
-					<span style="display: none" class="text-white">New Users</span>
-				</div>
-              
-            </div>
+            	
+            	
+            
             </div>
           </div>
         </div>
         
       </div>
-		  
+      
+      <!-- MODAL -->
+      
     <!-- InstanceEndEditable -->
 		
       
@@ -386,22 +240,15 @@
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
 	
-  <!-- simplebar js -->
-  <script src="assets/plugins/simplebar/js/simplebar.js"></script>
+	<!-- simplebar js -->
+	<script src="assets/plugins/simplebar/js/simplebar.js"></script>
   <!-- waves effect js -->
   <script src="assets/js/waves.js"></script>
-  <!-- sidebar-menu js -->
-  <script src="assets/js/sidebar-menu.js"></script>
+	<!-- sidebar-menu js -->
+	<script src="assets/js/sidebar-menu.js"></script>
   <!-- Custom scripts -->
   <script src="assets/js/app-script.js"></script>
-  
-  <!-- Vector map JavaScript -->
-  <script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
-  <script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <!-- Chart js -->
-  <script src="assets/plugins/Chart.js/Chart.min.js"></script>
-  <!-- Index js -->
-  <script src="assets/js/index.js"></script>
+
 	<!-- InstanceEndEditable -->
 
   
