@@ -1,8 +1,8 @@
 {
-  "name": "br.yourname.helloword",
-  "displayName": "Helloword",
+  "name": "com.setfuncional",
+  "displayName": "SET FUNCIONAL",
   "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "Aqui você dispõe de uma assessoria fitness de qualidade, com os melhores profissionais.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,18 +10,11 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-android": "^7.1.1",
-    "cordova-plugin-background-mode": "git+https://github.com/katzer/cordova-plugin-background-mode.git",
-    "cordova-plugin-device": "^2.0.2",
-    "cordova-plugin-whitelist": "^1.3.3"
+    "cordova-plugin-local-notification": "git+https://github.com/katzer/cordova-plugin-local-notifications.git"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-background-mode": {}
-    },
-    "platforms": [
-      "android"
-    ]
+      "cordova-plugin-local-notification": {}
+    }
   }
 }

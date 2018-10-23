@@ -1,3 +1,21 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 var app = {
     // Application Constructor
     initialize: function() {
@@ -25,34 +43,4 @@ var app = {
     }
 };
 
-function teste_rodando(){
-	alert("antes rodar");
-	teste = cordova.plugins.backgroundMode.isActive();
-	alert("rodando "+teste);	
-}
-function teste_ativar(){
-	alert("antes ativado");
-	cordova.plugins.backgroundMode.setEnabled(true);
-	alert("ativado");	
-}
-function data_atual(){
-    data = new Date();
-	
-	segu = data.getSeconds();
-	minu = data.getMinutes();
-	hora = data.getHours();
-    dia = data.getDate();
-    mes = data.getMonth();
-    ano = data.getFullYear();
-    mes = mes + 1;
-    if(dia <= 9){dia = "0"+dia;}
-    if(mes <= 9){mes = "0"+mes;}    
-    return dia+"/"+mes+"/"+ano+" "+hora+":"+minu+":"+segu;
-}
-function add_lista(){
-	$("#lista_teste").append("<tr><td>rodando</td><td>"+data_atual()+"</td></tr>");
-	cordova.plugins.backgroundMode.excludeFromTaskList();
-	setTimeout(add_lista,5000);
-}
-setTimeout(add_lista,5000);
 app.initialize();
