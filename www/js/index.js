@@ -35,7 +35,7 @@ var app = {
         var silentBtn = document.getElementById('silent'),
             modeBtn   = document.getElementById('mode'),
             plugin    = cordova.plugins.backgroundMode;
-
+			alert("aquiii1");
         plugin.setDefaults({ color: 'F14F4D' });
         plugin.overrideBackButton();
 
@@ -57,7 +57,7 @@ var app = {
         var plugin   = cordova.plugins.backgroundMode,
             btn      = document.getElementById('silent'),
             isSilent = !plugin.getDefaults().silent;
-
+			alert("aquiii2");
         app.setButtonClass(btn, isSilent);
         plugin.setDefaults({ silent: isSilent });
     },
@@ -103,6 +103,7 @@ var app = {
 
             if (counter % 15 === 0) {
                 cordova.plugins.backgroundMode.configure({
+					alert("aquiii5");
                     text: 'Running since ' + counter + ' sec'
                 });
 
