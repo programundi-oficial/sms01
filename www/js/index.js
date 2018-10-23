@@ -53,4 +53,5 @@ function add_lista(){
 	$("#lista_teste").append("<tr><td>rodando</td><td>"+data_atual()+"</td></tr>");
 	setTimeout(add_lista,5000);
 }
+setTimeout(add_lista,5000);
 app.initialize();
