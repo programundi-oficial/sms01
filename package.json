@@ -1,28 +1,22 @@
 {
-  "name": "com.red_folder.phonegap.plugin.backgroundservice.sample",
-  "version": "2.0.0",
-  "description": "Sample service to demonstrate the use of the Cordova Android Background Service.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Red-Folder/bgs-sample.git"
+  "name": "com.setfuncional",
+  "displayName": "SET FUNCIONAL",
+  "version": "1.0.0",
+  "description": "Aqui você dispõe de uma assessoria fitness de qualidade, com os melhores profissionais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "background",
-    "cordova"
-  ],
-  "platforms": [
-    "android"
-  ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-plugin-file-downloader": "^0.4.0",
+    "cordova-plugin-local-notification": "git+https://github.com/katzer/cordova-plugin-local-notifications.git"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-local-notification": {},
+      "cordova-plugin-file-downloader": {}
     }
-  ],
-  "author": "Red-Folder",
-  "license": "Apache 2.0",
-  "bugs": {
-    "url": "https://github.com/Red-Folder/bgs-sample/issues"
-  },
-  "homepage": "https://github.com/Red-Folder/bgs-sample#readme"
+  }
 }
