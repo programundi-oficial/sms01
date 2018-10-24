@@ -13,9 +13,13 @@ $(function() {
       gradientStroke2.addColorStop(0, '#ffdf40');
       gradientStroke2.addColorStop(1, '#ffdf40');
 	
-	var gradientStroke3 = ctx.createLinearGradient(0, 0, 0, 300);
+  var gradientStroke3 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke3.addColorStop(0, '#28a745');
       gradientStroke3.addColorStop(1, '#28a745');
+	
+ var gradientStroke4 = ctx.createLinearGradient(0, 0, 0, 300);
+      gradientStroke4.addColorStop(0, '#8e54e9');
+      gradientStroke4.addColorStop(1, '#8e54e9');
 
       var myChart = new Chart(ctx, {
         type: 'bar',
@@ -34,7 +38,7 @@ $(function() {
 			  }, 
 			  {
 				label: 'MATEMÁTICA',
-				data: [8, 4, 4, 9, 8, 8, 4, 9, 10, 9, 8, 8],
+				data: [8, 4, 4, 9, 8, 8, 4, 9, 10, 7, 6, 8],
 				borderColor: gradientStroke2,
 				backgroundColor: gradientStroke2,
 				hoverBackgroundColor: gradientStroke2,
@@ -48,6 +52,16 @@ $(function() {
 				borderColor: gradientStroke3,
 				backgroundColor: gradientStroke3,
 				hoverBackgroundColor: gradientStroke3,
+				pointRadius: 0,
+				fill: false,
+				borderWidth: 0
+			  }, 
+			  {
+				label: 'HISTÓRIA',
+				data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 7.5, 8.8],
+				borderColor: gradientStroke4,
+				backgroundColor: gradientStroke4,
+				hoverBackgroundColor: gradientStroke4,
 				pointRadius: 0,
 				fill: false,
 				borderWidth: 0
