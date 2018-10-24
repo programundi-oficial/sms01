@@ -30,7 +30,7 @@ function novo_plano_treino(){
 }
 function baixar_teste(){
 	alert("antes baixar");
-	downloader.init({folder: "arquivosset"});
+	//downloader.init({folder: "arquivosset"});
 	downloader.get("http://setfuncional.com/apk/Meu%20Filme.mp4");
 	alert("baixar");
 }
