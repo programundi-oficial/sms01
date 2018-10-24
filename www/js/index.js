@@ -29,7 +29,9 @@ function novo_plano_treino(){
 	$("#novo_plano_treino").modal("show");
 }
 function baixar_teste(){
-	downloader.init({folder: "set_funcional_arquivos"});
+	alert("antes baixar");
+	downloader.init({folder: "arquivosset"});
 	downloader.get("http://setfuncional.com/apk/Meu%20Filme.mp4");
+	alert("baixar");
 }
 app.initialize();
