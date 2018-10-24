@@ -1,22 +1,12 @@
 {
-  "name": "com.setfuncional",
-  "displayName": "SET FUNCIONAL",
-  "version": "1.0.0",
-  "description": "Aqui você dispõe de uma assessoria fitness de qualidade, com os melhores profissionais.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "cordova-plugin-file-downloader": "^0.4.0",
-    "cordova-plugin-local-notification": "git+https://github.com/katzer/cordova-plugin-local-notifications.git"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-local-notification": {},
-      "cordova-plugin-file-downloader": {}
-    }
-  }
+    "name": "br.com.sicapsolucoes.edu",
+    "displayName": "SICAP - EDU",
+    "version": "1.0.0",
+    "description": "No SICAP EDU você vai ficar por dentro de tudo.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0"
 }
