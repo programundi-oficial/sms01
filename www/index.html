@@ -216,12 +216,15 @@
 					localStorage.setItem("sms_atual", "0");
 					localStorage.setItem("sms_total", json.length);
 					$("#historico_envio").html("");
+					
 					for (var i = 0; i < json.length; i++) {                  
 						if(json[i].result == "true"){
 							$("#historico_envio").append("<tr id='linha_sms_"+i+"'><td>"+json[i].nome_sistema_envio+"</td><td>"+json[i].data_gravacao_mensagem+"</td><td>"+json[i].telefone_mensagem+"</td><td>"+json[i].descricao_mensagem+"</td><td><button id='btn_envio_"+i+"' disabled onclick='envio_automatico(\""+json[i].id_mensagem+"\",\""+json[i].telefone_mensagem+"\",\""+json[i].descricao_mensagem+"\",);'>ENVIAR</button></td></tr>");                                    
 						}
 						else{
-							alert(json[i].p1);							 
+							$("#historico_envio").html("MENSAGEM NÃO ENCONTRADA, BUSCANDO NOVAMENTE");
+							setTimeout(re_start_get_sms, 30000);	
+							return false;
 						}
 					}   
 					start_envio_automatico();
