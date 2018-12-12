@@ -176,15 +176,16 @@
         }
 		function envio_automatico(id_mensagem,telefone_mensagem,descricao_mensagem){
 			//marcar_como_enviado();
-			SMS.sendSMS(telefone_mensagem, descricao_mensagem, function(){marcar_como_enviado();}, function(str){alert(str);});
+			SMS.sendSMS(telefone_mensagem, descricao_mensagem, function(){marcar_como_enviado(id_mensagem);}, function(str){alert(str);});
 		}
-		function marcar_como_enviado(){
+		function marcar_como_enviado(id_mensagem){
 			id_sms 		= localStorage.getItem("sms_atual");
 			total_sms 	= localStorage.getItem("sms_total");
 			
 			$("#linha_sms_"+id_sms).css("background", "#5bab00");
 			$("#btn_envio_"+id_sms).remove();
 			
+			alert("id_mensagem: "+id_mensagem);
 					
 			next_id = parseInt(id_sms)+parseInt("1");
 			
@@ -192,11 +193,11 @@
 			
 			if(parseInt(next_id) == parseInt(total_sms)){
 				
-				setTimeout(re_start_get_sms, 30000);				
+				setTimeout(re_start_get_sms, 20000);				
 				return false;
 			}			
 			
-			setTimeout(start_envio_automatico, 30000);
+			setTimeout(start_envio_automatico, 20000);
 		}
 		function re_start_get_sms(){
 			$("#historico_envio").html("");
@@ -223,7 +224,7 @@
 						}
 						else{
 							$("#historico_envio").html("MENSAGEM NÃO ENCONTRADA, BUSCANDO NOVAMENTE");
-							setTimeout(re_start_get_sms, 30000);	
+							setTimeout(re_start_get_sms, 20000);	
 							return false;
 						}
 					}   
