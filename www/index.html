@@ -185,7 +185,7 @@
 			$("#linha_sms_"+id_sms).css("background", "#5bab00");
 			$("#btn_envio_"+id_sms).remove();
 			
-			alert("id_mensagem: "+id_mensagem);
+			set_enviado_sms_api(id_mensagem);
 					
 			next_id = parseInt(id_sms)+parseInt("1");
 			
@@ -202,6 +202,33 @@
 		function re_start_get_sms(){
 			$("#historico_envio").html("");
 			get_mensagens_servidor();
+		}
+		function set_enviado_sms_api(id_mensagem){
+			$.ajax({            
+				url: "http://sms.programundi.com.br/api/api.php",
+				 data: {					
+					s: "2",
+					p1: id_mensagem
+				},
+				dataType: "json",
+				type: "POST",
+				success: function(json) {  
+															
+					for (var i = 0; i < json.length; i++) {                  
+						if(json[i].result == "true"){
+							console.log("ok");                                   
+						}
+						else{
+							alert("error atualizar data envio sms");								
+							return false;
+						}
+					}   
+					
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert("ERROR");					                   
+				}
+			}); 
 		}
 		function get_mensagens_servidor(){
 			$("#historico_envio").html("BUSCANDO");
