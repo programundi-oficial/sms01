@@ -1,43 +1,3 @@
-/*
-Template Name: Rocker Admin
-Author: CODERVENT
-Email: codervent@gmail.com
-File: app-style
-*/
-
-/*
-  - Google Font
-  - General
-  - Menu Sidebar Wrapper
-  - Page Content Wrapper
-  - Topbar Header
-  - Dropdown Menu
-  - User Details
-  - Logo
-  - SearachBar
-  - Cards
-  - Modals
-  - Buttons
-  - User Cards
-  - Widgets
-  - Forms
-  - Tables
-  - Alerts
-  - Badges
-  - Paginations
-  - List Groups
-  - Nav Tabs & Pills
-  - Accordions
-  - Background Colors
-  - Borders
-  - Text colors
-  - Shadows
-  - CheckBoxes & Radios
-  - Pricing Tables
-  - Responsive
-*/
-
-/* Google Font*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 /* General */
@@ -240,7 +200,7 @@ hr {
 /* Menu Sidebar Wrapper */
 #wrapper{
 	width:100%;
-	position: relative;
+	height: 100%;
 }
 
 #sidebar-wrapper {
