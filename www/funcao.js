@@ -145,8 +145,6 @@ function convert_banco_data(data){
 }
 
 function ano_letivo(){
-
-	
 	if(token_user+"" == "null"){
 	  	location.href="login.html";
 		return false;
@@ -340,7 +338,6 @@ function get_comunicado(){
 }
 
 function horario(){
-	
 	p1 = $("#opcaoano option:selected").val();
 	
 	if(token_user+"" == "null"){
@@ -573,7 +570,7 @@ function lista_atendimento(){
 		
 		$("#corpo-tabela").html("");
 		for (var i = 0; i < json.length; i++) {             
-			$("#corpo-tabela").append("<tr data-toggle='modal' data-target='#modalMensagem"+json[i].id_atendimento+"'><td><span class='float-right font-weight-bold'>"+convert_banco_data(json[i].data_atendimento)+"</span>"+json[i].atendimento+"</td></tr>");
+			$("#corpo-tabela").append("<tr data-toggle='modal' data-target='#modalMensagem"+json[i].id_atendimento+"'><td>"+json[i].atendimento+"</td></tr>");
 			
 			
 			$("#modal-eviados").append("<div class='modal fade' id='modalMensagem"+json[i].id_atendimento+"' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'><div class='modal-dialog modal-dialog-centered' role='document'><div class='modal-content'><div class='modal-body'><div class='card mt-3'><div class='card-body'><div class='media mb-3'><div class='media-body'><span class='media-meta float-right'>DATA ENVIADA</span><small class='text-muted'>Para: "+json[i].setor+"</small></div></div> <p><b>"+json[i].tipo+"</b></p><p>"+json[i].assunto+"</p><button id='btn-fechar' type='button' class='btn btn-secundary waves-effect waves-light m-1' data-dismiss='modal' style='float: right;'><i class='fa fa-close'></i> Fechar</button></div></div></div></div></div></div>");
@@ -869,14 +866,14 @@ function setaVoltar(){
 
 function get_dados_grafico_financeiro(){
 	
-	localStorage.setItem("fin_pag", "0");
-	localStorage.setItem("fin_atras", "0");
-	
+	p1 = $("#opcaoano option:selected").val();
+			
 	$.ajax({            
 		url: xurlq,
 		data: {					
 		s: "17",
-		token: token_user
+		token: token_user,
+		p1: p1
 		
 	},
 	dataType: "json",
@@ -884,15 +881,43 @@ function get_dados_grafico_financeiro(){
 	timeout:  6000,
 	success: function(json) {
 		
+		var total_i = 0;
 		
 		for (var i = 0; i < json.length; i++) { 
-			localStorage.setItem("fin_pag", json[i]);
-			localStorage.setItem("fin_atras", json[i]);
+			
+			total_i = parseInt(json[i].aberto)+parseInt(json[i].pago);
+			
+			var p_pagto  = (parseInt(json[i].pago)*100)/total_i;
+			var p_aberto = (parseInt(json[i].aberto)*100)/total_i;
+						
+			var c3DonutChart = c3.generate({
+				bindto: '#c3-financeiro',
+				data: {
+				  columns:[
+					  ['Pago', p_pagto],
+					  ['Aberto', p_aberto],
+				  ]
+					,
+					type:'donut'
+				},
+				color: {
+					pattern: ['#15ca20','#fd3550']
+				},
+				padding: {
+					top: 0,
+					right:0,
+					bottom:30,
+					left: 0,
+				},
+				donut: {
+				  title: "Financeiro"
+				}
+			  });
 			
 		}
 
 		if(json.length == ""){
-			//$("#if").append("<p align='center'>Não possui</p>");
+			$("#if").append("<p align='center'>Não possui</p>");
 		}
 		
 				
@@ -905,6 +930,251 @@ function get_dados_grafico_financeiro(){
 	}
   });
 }
+
+function lista_serie_disciplina(){
+	if(token_user+"" == "null"){
+	  	location.href="login.html";
+		return false;
+	}
+	
+	$.ajax({            
+		url: xurlq,
+		data: {					
+		s: "19",
+		token: token_user
+	},
+	dataType: "json",
+	type: "POST",
+	timeout:  6000,
+	success: function(json) {
+		
+		for (var i = 0; i < json.length; i++){
+			$("#opcaoid").append("<option value='"+json[i].id_serie_disciplina+"'>"+json[i].ds_disciplina+"</option>");
+		}
+		
+		
+	},
+	error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+		alert("Erro" + errorThrown);
+
+	}
+  });
+}
+
+function arquivo(){
+	p1 = $("#opcaoid option:selected").val();
+	if(token_user+"" == "null"){
+	  	location.href="login.html";
+		return false;
+	}
+	
+	$.ajax({            
+		url: xurlq,
+		data: {					
+		s: "18",
+		token: token_user,
+		p1: p1
+	},
+	dataType: "json",
+	type: "POST",
+	timeout:  6000,
+	success: function(json) {
+		
+		$("#table-biblioteca").append("");
+		for (var i = 0; i < json.length; i++){
+			$("#table-biblioteca").append("<tr><td>"+json[i].nome_arquivo+"</td></tr>");
+		}
+		if(json.length == ""){
+			$("#if").append("<p align='center'>Não possui</p>");
+		}
+		
+		
+	},
+	error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+		alert("Erro" + errorThrown);
+
+	}
+  });
+}
+
+function setor_atendimento(){
+	$.ajax({            
+		url: xurlq,
+		data: {					
+		s: "20"
+	},
+	dataType: "json",
+	type: "POST",
+	timeout:  6000,
+	success: function(json) {
+
+		
+		for (var i = 0; i < json.length; i++){
+			$("#setor").append("<option value='"+json[i].id_atendimento_setor+"'>"+json[i].descricao+"</option>");
+		}
+		
+		
+	},
+	error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+		alert("Erro" + errorThrown);
+
+	}
+  });
+}
+
+function tipo_atendimento(){
+	$.ajax({            
+		url: xurlq,
+		data: {					
+		s: "21"
+	},
+	dataType: "json",
+	type: "POST",
+	timeout:  6000,
+	success: function(json) {
+		
+		for (var i = 0; i < json.length; i++){
+			$("#tipo").append("<option value='"+json[i].id_atendimento_tipo+"'>"+json[i].descricao+"</option>");
+		}
+		
+		
+	},
+	error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+		alert("Erro" + errorThrown);
+
+	}
+  });
+}
+
+
+function inserir_atendimento(){
+	
+	p1 = $("#setor option:selected").val();
+	p2 = $("#tipo option:selected").val();
+	p3 = $("#assunto").val();
+	p4 = $("#data").val();
+	p5 = $("#descricao").val();
+	p6 = " ";
+	
+	console.log(p1);
+	console.log(p2);
+	console.log(p3);
+	console.log(p4);
+	console.log(p5);
+	console.log(p6);
+	
+	if(token_user+"" == "null"){
+	  	location.href="login.html";
+		return false;
+	}
+	
+	$.ajax({            
+		url: xurlq,
+		data: {					
+		s: "22",
+		token: token_user,
+		p1: p1,
+		p2: p2,
+		p3: p3,
+		p4: p4,
+		p5: p5,
+		p6: p6
+	},
+	dataType: "json",
+	type: "POST",
+	timeout:  6000,
+	success: function(json) {
+		
+		$("#mensagem").modal();
+		
+	},
+	error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+		//alert("Erro" + errorThrown);
+
+	}
+  });
+}
+
+function conteudo_programatico(){
+	
+	if(token_user+"" == "null"){
+	  	location.href="login.html";
+		return false;
+	}
+
+	$.ajax({            
+		url: xurlq,
+		data: {					
+		s: "23",
+		token: token_user
+	},
+	dataType: "json",
+	type: "POST",
+	timeout:  6000,
+	success: function(json) {
+		
+		$("#conteudo").html("");
+		for (var i = 0; i < json.length; i++) { 
+			
+			if(json[i].ds_disciplina == json[i].ds_disciplina){
+				
+				$("#conteudo").html("<div class='card'><div class='card-header' align='center'>"+json[i].ds_disciplina+"</div><div class='card-body' id='corpo'>");
+				
+				if(json[i].ds_trimestre == "1º UNIDADE"){
+					$("#corpo").html("<h6>"+json[i].ds_trimestre+"</h6>")
+					for(var i = 0; i < json.length; i++){
+						$("#corpo").append("<ul><li>"+json[i].ds_ementa_disciplina+"</li></ul>");
+					}
+					
+				}
+				if(json[i].ds_trimestre == "2º UNIDADE"){
+					$("#corpo").html("<h6>"+json[i].ds_trimestre+"</h6>")
+					for(var i = 0; i < json.length; i++){
+						$("#corpo").append("<ul><li>"+json[i].ds_ementa_disciplina+"</li></ul>");
+					}
+					
+				}
+				if(json[i].ds_trimestre == "3º UNIDADE"){
+					$("#corpo").html("<h6>"+json[i].ds_trimestre+"</h6>")
+					for(var i = 0; i < json.length; i++){
+						$("#corpo").append("<ul><li>"+json[i].ds_ementa_disciplina+"</li></ul>");
+					}
+					
+				}
+				if(json[i].ds_trimestre == "4º UNIDADE"){
+					$("#corpo").html("<h6>"+json[i].ds_trimestre+"</h6>")
+					for(var i = 0; i < json.length; i++){
+						$("#corpo").append("<ul><li>"+json[i].ds_ementa_disciplina+"</li></ul>");
+					}
+					
+				}
+			
+				
+			}
+			
+			
+					
+		}
+		if(json.length == ""){
+			$("#if").append("<p align='center'>Não possui</p>");
+		}
+		
+				
+		
+			
+	},
+	error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+		alert("Erro" + errorThrown);
+	}
+  });
+}
+
 
 
 

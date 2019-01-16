@@ -234,7 +234,7 @@
     	
 		<form>
           <div class="form-group">
-            <select class="custom-select" id="opcaoano" onChange="lista_ficha_financeira()" style="width: 30%;">
+            <select class="custom-select" id="opcaoano" onChange="lista_ficha_financeira(), get_dados_grafico_financeiro()" style="width: 30%;">
 				
   			</select>
           </div>    
@@ -375,8 +375,7 @@
 	 <script>
 		 ano_letivo();
 		 setTimeout(lista_ficha_financeira,400);
-		 
-		 
+		 setTimeout(get_dados_grafico_financeiro,400);
 	 </script>
 
 	<!-- InstanceEndEditable -->

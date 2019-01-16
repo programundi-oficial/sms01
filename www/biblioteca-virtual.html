@@ -49,6 +49,15 @@
 <body>
 <!-- InstanceBeginEditable name="css" -->
 	
+	<style>
+		tbody tr:hover{
+			    background-color: rgba(0,0,0,.075);
+		}
+		tbody tr{
+			cursor: pointer;
+		}
+	</style>
+	
 <!-- InstanceEndEditable -->
 <!-- Start wrapper-->
  <div id="wrapper">
@@ -213,11 +222,13 @@
     		</div>
      	</div>
 		
-		<div class="col-sm-4 mb-3">
-			<label for="opcaodisciplina">Disciplina</label>
-            	<select class="form-control form-control-sm" id="opcaodisciplina" onChange="">
+		<form>
+          <div class="form-group">
+            <select class="custom-select" id="opcaoid" onChange="arquivo()" style="width: 30%;">
+				
   			</select>
-		</div>
+          </div>    
+        </form>
 		
 		<div>
 			<div class="card">
@@ -227,8 +238,6 @@
 							<thead>
 								<tr>
 									<td>Arquivo</td>
-									<td>Tamanho</td>
-									<td>Status</td>
 								</tr>
 							</thead>
 							<tbody id="table-biblioteca">
@@ -295,7 +304,8 @@
 	<script src="funcao.js"></script>
 	
 	<script>
-		disciplina();
+		lista_serie_disciplina();
+		setTimeout(arquivo,500);
 	</script>
 	
 	<!-- InstanceEndEditable -->

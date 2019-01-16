@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- Mirrored from codervent.com/rocker/color-version/authentication-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Oct 2018 18:46:10 GMT -->
+
 	
 <head>
   <meta charset="utf-8"/>
@@ -28,13 +31,9 @@
 </head>
 
 <body>
-
+ <!-- Start wrapper-->
  <div id="wrapper">
-	<div class="card border-primary border-top-sm border-bottom-sm card-authentication1" style="height: 100%;
-    position: absolute;
-    margin-top: 0 !important;
-    border: 0 !important;
-    width: 100%;">
+	<div class="card border-primary border-top-sm border-bottom-sm card-authentication1 mx-auto my-5 animated bounceInDown">
 		<div class="card-body">
 		 <div class="card-content p-2">
 		 	<div class="text-center">
@@ -72,11 +71,14 @@
 			 </form>
 		   </div>
 		  </div>
-	     </div>    
-
+	     </div>
+    
+     <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-   
-	</div> 
+    <!--End Back To Top Button-->
+	</div><!--wrapper-->
+	
+  <!-- Bootstrap core JavaScript-->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
@@ -89,7 +91,64 @@
        }
     }, false);
 	</script>
-	
+	<!--
+	<script type="application/javascript">
+		var xurlq = "https://sicapsolucoes.com.br/teste_joyce/servicos.php";
+		
+		
+		function login() { 
+			
+			p1 = $("#p1").val();
+			p2 = $("#p2").val();
+			
+			if(p1.length == "") {
+				alert("Por favor, preencha");
+				$("#p1").focus();
+				return false;
+			}
+			if(p2.length == "") {
+				alert("Por favor, preencha");
+				$("#p2").focus();
+				return false;
+			}
+			
+			$("#btn_login").attr("disabled", true);
+			
+			$.ajax({            
+				url: xurlq,
+				 data: {					
+					s: "0",
+					p1: p1,
+					p2: p2
+				},
+				dataType: "json",
+				type: "POST",
+				timeout:  6000,
+				success: function(json) {
+					$("#btn_login").attr("disabled", false);
+					for (var i = 0; i < json.length; i++) {             
+                		if(json[i].result == "true"){
+							
+							localStorage.setItem("token_user", json[i].token);
+							location.href="index.html";
+						}
+						if(json[i].result !== "true"){
+							alert(json[i].p1);
+						}
+					}					
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					$("#btn_login").attr("disabled", false);
+					alert("deu merda");
+				}
+		   });
+
+		}
+
+		
+	</script>
+  -->
 </body>
 
+<!-- Mirrored from codervent.com/rocker/color-version/authentication-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Oct 2018 18:46:10 GMT -->
 </html>

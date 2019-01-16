@@ -116,6 +116,9 @@ $(function() {
         left: 0,
     }
   });
+	
+	
+	/*
   var c3PieChart = c3.generate({
     bindto: '#c3-pie-chart',
     data: {
@@ -164,6 +167,59 @@ $(function() {
       ids: 'data2'
     });
   }, 2500);
+	
+	*/
+	
+	var c3PieChart = c3.generate({
+    bindto: '#c3-frequencia',
+    data: {
+      // iris data from R
+      columns: [
+        ['Presença', 30], //valor
+        ['Falta', 120], //valor
+      ],
+      type: 'pie',
+      onclick: function(d, i) {
+        console.log("onclick", d, i);
+      },
+      onmouseover: function(d, i) {
+        console.log("onmouseover", d, i);
+      },
+      onmouseout: function(d, i) {
+        console.log("onmouseout", d, i);
+      }
+    },
+    color: {
+        pattern: ['#15ca20','#fd3550']
+    },
+    padding: {
+        top: 0,
+        right:0,
+        bottom:30,
+        left: 0,
+    }
+  });
+
+  setTimeout(function() {
+    c3PieChart.load({
+      columns: [
+        ["Presença", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
+        ["Falta", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
+      ]
+    });
+  }, 1500);
+
+  setTimeout(function() {
+    c3PieChart.unload({
+      ids: 'data1'
+    });
+    c3PieChart.unload({
+      ids: 'data2'
+    });
+  }, 2500);
+	
+	
+  /*	
   var c3DonutChart = c3.generate({
     bindto: '#c3-donut-chart',
     data: {
@@ -217,3 +273,51 @@ $(function() {
 
 
 });
+*/
+	
+		
+		var pago 		= localStorage.getItem("fin_pag");
+		var atrasado 	= localStorage.getItem("fin_pag2");
+
+	
+
+		/*var c3DonutChart = c3.generate({
+		bindto: '#c3-financeiro',
+		data: {
+		  columns:[
+			  ['pago', pago],
+			  ['atrasado', atrasado],
+		  ]
+			,
+			type:'donut'
+		},
+		color: {
+			pattern: ['#15ca20','#fd3550']
+		},
+		padding: {
+			top: 0,
+			right:0,
+			bottom:30,
+			left: 0,
+		},
+		donut: {
+		  title: "Financeiro"
+		}
+	  });*/
+
+
+
+	  /*setTimeout(function() {
+		c3DonutChart.unload({
+		  ids: 'pago'
+		});
+		c3DonutChart.unload({
+		  ids: 'atrasado'
+		});
+	  }, 2500);*/
+
+	});
+	
+	
+	
+	

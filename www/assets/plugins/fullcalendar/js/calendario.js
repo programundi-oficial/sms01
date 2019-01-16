@@ -3,7 +3,12 @@
 $(document).ready(function() {
 
     $('#calendar').fullCalendar({
-  defaultView: 'agendaWeek',
+		header: {
+		left: 'prev,next today',
+		center: 'title',
+		right: 'month,agendaWeek,agendaDay'
+	  },
+  		defaultView: 'month',
 		editable: false,
       eventLimit: true, // allow "more" link when too many events
       events: [
@@ -23,5 +28,5 @@ $(document).ready(function() {
         }
       ]
 });
-
+	
   });

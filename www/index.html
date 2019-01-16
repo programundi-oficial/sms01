@@ -211,6 +211,13 @@
 			.bg-pattern-primary:hover{
 				    background-color: #0563b1;
 			}
+			
+			@media screen and (max-width: 400px) {
+			  .card-body{
+				min-height: 170px;
+				}
+			}
+
 		</style>
 		<script>
 			function direcionar(link){
@@ -489,6 +496,11 @@
 	<script>
 		$("body").append("<div id='tela-preta'></div>");
 		
+	 </script>
+	 
+	 <script>
+		 var versaoJquery = $.fn.jquery;
+		 console.log('Versão jQuery: ' + versaoJquery);
 	 </script>
 	 
 	

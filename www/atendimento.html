@@ -452,36 +452,38 @@
                       </div>
                       <div class="modal-body">
                         
+						  <div class="col-md-6">
+							<div class="form-group">
+                            	<input name="data" id="data" type="text" class="form-control" placeholder="Data" data-mask="00/00/0000" data-mask-selectonfocus="true">
+                        	</div>
+						</div>
                         <div class="col">
                         <form id="form-msg" name="form-msg">
                         <div class="form-group">
-                            <select name="p1" class="custom-select" id="p1">
-    							<option value="jodan336@gmail.com">Diretor</option>
-    							<option value="financeiro">Financeiro</option>
-    							<option value="professor">Professor</option>
-    							<option value="coordenador">Coordenador</option>
+                            <select name="setor" class="custom-select" id="setor">
+    							
   							</select>
                         </div>
 						
 						<div class="row">
-							<div class="col-md-6">
+							
+						<div class="col">
 							<div class="form-group">
-                            	<input name="p2" id="p2" type="text" class="form-control" placeholder="Data" data-mask="00/00/0000" data-mask-selectonfocus="true">
-                        	</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-                            	<input name="p3" id="p3" type="text" class="form-control" placeholder="Tipo">
+                            	<div class="form-group">
+									<select name="tipo" class="custom-select" id="tipo">
+
+									</select>
+                        		</div>
                         	</div>
 						</div>
 							
 						</div>
 						
                         <div class="form-group">
-                            <input name="p4" id="p4" type="text" class="form-control" placeholder="Atendimento">
+                            <input name="descricao" id="descricao" type="text" class="form-control" placeholder="Atendimento">
                         </div>
                         <div class="form-group">
-                            <textarea name="p5" id="p5" class="form-control" placeholder="Assunto..." style="height: 200px"></textarea>
+                            <textarea name="assunto" id="assunto" class="form-control" placeholder="Assunto..." style="height: 200px"></textarea>
                         </div>
 						
 							<div class="form-group" align="right">
@@ -490,7 +492,7 @@
 							</div>
 						
                         <div class="form-group" align="center">
-                            <button onClick="mensagemEmail();" type="button" id="btn" class="btn btn-primary waves-effect waves-light m-1">
+                            <button onClick="inserir_atendimento()" type="button" id="btn" class="btn btn-primary waves-effect waves-light m-1">
 								<i class="fa fa-send"></i> Enviar
 							</button>
                        
@@ -503,6 +505,21 @@
                     </div>
                   </div>
                 </div> <!-- End Modal -->
+		
+		
+		<div class="modal fade ml-2 mr-2" id="mensagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+			  <div class="modal-body">
+				<h5>Enviado com Sucesso !<img class="ml-2" src="icons/icons8-selecionado-filled-40.png" st></h5>
+				  
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
 		
 
     <!-- InstanceEndEditable -->
@@ -567,6 +584,8 @@
 	 <script src="funcao.js"></script>
 	 <script>
 		 lista_atendimento();
+		 setTimeout(setor_atendimento,400);
+		 setTimeout(tipo_atendimento,400);
 	 </script>
 
 	
