@@ -30,7 +30,7 @@ function login() {
 		type: "POST",
 		timeout:  6000,
 		success: function(json) {
-			console.log(json);
+			alert(json);
 			return false;
 			$("#btn_login").attr("disabled", false);
 			for (var i = 0; i < json.length; i++) {             
