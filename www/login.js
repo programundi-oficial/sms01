@@ -26,12 +26,12 @@ function login() {
 			p1: p1,
 			p2: p2
 		},
-		//dataType: "json",
+		dataType: "json",
 		type: "POST",
 		timeout:  6000,
 		success: function(json) {
-			alert(json);
-			return false;
+			//alert(json);
+			//return false;
 			$("#btn_login").attr("disabled", false);
 			for (var i = 0; i < json.length; i++) {             
 				if(json[i].result == "true"){
