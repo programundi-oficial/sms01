@@ -1,9 +1,7 @@
-
-
 var token_user 	= localStorage.getItem("token_user");
+var y	 		= localStorage.getItem("id_banco");
 
-function valida_logado(){
-	
+function valida_logado(){	
 
 	if(token_user+"" == "null"){
 	  	location.href="login.html";
@@ -12,9 +10,10 @@ function valida_logado(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "2",
-		token: token_user
+		data: {	
+			y: y,
+			s: "2",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -33,26 +32,20 @@ function valida_logado(){
 		}
 	},
 	error: function(XMLHttpRequest, textStatus, errorThrown) {
-
 		alert("Erro ao logar");
 		localStorage.removeItem("token_user");
 	}
   });
 }
-valida_logado();
 
-function logout(){
+function logout(){	
 	
-	
-  		token  = localStorage.removeItem("token_user");
-		if(!localStorage.getItem('token_user')){
-			localStorage.clear();
-			location.href="login.html";
-			return false;
-		}
-		
-	
-	
+	token  = localStorage.removeItem("token_user");
+	if(!localStorage.getItem('token_user')){
+		localStorage.clear();
+		location.href="login.html";
+		return false;
+	}
 }
 
 function lista_boletim(){
@@ -66,10 +59,11 @@ function lista_boletim(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "1",
-		token: token_user,
-		p1: p1
+		data: {	
+			y: y,
+			s: "1",
+			token: token_user,
+			p1: p1
 	},
 	dataType: "json",
 	type: "POST",
@@ -104,10 +98,11 @@ function lista_ficha_financeira(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "4",
-		token: token_user,
-		p1: p1
+		data: {	
+			y: y,
+			s: "4",
+			token: token_user,
+			p1: p1
 	},
 	dataType: "json",
 	type: "POST",
@@ -152,9 +147,10 @@ function ano_letivo(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "5",
-		token: token_user
+		data: {	
+			y: y,
+			s: "5",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -184,9 +180,10 @@ function disciplina(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "9",
-		token: token_user
+		data: {	
+			y: y,
+			s: "9",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -220,12 +217,13 @@ function frequencia(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "6",
-		token: token_user,
-		p1: p1,
-		p2: p2,
-		p3: p3
+		data: {		
+			y: y,
+			s: "6",
+			token: token_user,
+			p1: p1,
+			p2: p2,
+			p3: p3
 	},
 	dataType: "json",
 	type: "POST",
@@ -260,11 +258,12 @@ function comunicado(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "7",
-		token: token_user,
-		p1: "-1",
-		p2: p2
+		data: {		
+			y: y,
+			s: "7",
+			token: token_user,
+			p1: "-1",
+			p2: p2
 	},
 	dataType: "json",
 	type: "POST",
@@ -311,11 +310,12 @@ function get_comunicado(){
 	var p2 = GetURLParameter("ano");
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "7",
-		token: token_user,
-		p1: p1,
-		p2: p2
+		data: {	
+			y: y,
+			s: "7",
+			token: token_user,
+			p1: p1,
+			p2: p2
 	},
 	dataType: "json",
 	type: "POST",
@@ -347,10 +347,11 @@ function horario(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "8",
-		token: token_user,
-		p1: p1
+		data: {		
+			y: y,
+			s: "8",
+			token: token_user,
+			p1: p1
 	},
 	dataType: "json",
 	type: "POST",
@@ -401,12 +402,13 @@ function mensagemEmail(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "10",
-		token: token_user,
-		p1: p1,
-		p2: p2,
-		p3: p3
+		data: {		
+			y: y,
+			s: "10",
+			token: token_user,
+			p1: p1,
+			p2: p2,
+			p3: p3
 	},
 	dataType: "json",
 	type: "POST",
@@ -441,9 +443,10 @@ function saudeAluno(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "11",
-		token: token_user
+		data: {	
+			y: y,
+			s: "11",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -476,11 +479,12 @@ function ocorrencia(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "13",
-		token: token_user,
-		p1: "-1",
-		p2: p2
+		data: {	
+			y: y,
+			s: "13",
+			token: token_user,
+			p1: "-1",
+			p2: p2
 	},
 	dataType: "json",
 	type: "POST",
@@ -515,11 +519,12 @@ function get_ocorrencia(){
 	var p2 = GetURLParameter("ano");
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "13",
-		token: token_user,
-		p1: p1,
-		p2: p2
+		data: {	
+			y: y,
+			s: "13",
+			token: token_user,
+			p1: p1,
+			p2: p2
 	},
 	dataType: "json",
 	type: "POST",
@@ -558,10 +563,11 @@ function lista_atendimento(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "15",
-		token: token_user,
-		p1: "-1"
+		data: {	
+			y: y,
+			s: "15",
+			token: token_user,
+			p1: "-1"
 	},
 	dataType: "json",
 	type: "POST",
@@ -592,9 +598,10 @@ function lista_calendario_escolar(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "16",
-		token: token_user
+		data: {	
+			y: y,
+			s: "16",
+			token: token_user
 		
 	},
 	dataType: "json",
@@ -630,9 +637,10 @@ function get_dados_calendario_escolar(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "14",
-		token: token_user
+		data: {		
+			y: y,
+			s: "14",
+			token: token_user
 		
 	},
 	dataType: "json",
@@ -671,9 +679,10 @@ function disciplinaCheckBox(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "9",
-		token: token_user
+		data: {	
+			y: y,
+			s: "9",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -721,11 +730,12 @@ function testeConhecimento(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "12",
-		token: token_user,
-		p1: listaidmat,
-		p2: p2
+		data: {		
+			y: y,
+			s: "12",
+			token: token_user,
+			p1: listaidmat,
+			p2: p2
 		
 	},
 	dataType: "json",
@@ -870,10 +880,11 @@ function get_dados_grafico_financeiro(){
 			
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "17",
-		token: token_user,
-		p1: p1
+		data: {		
+			y: y,
+			s: "17",
+			token: token_user,
+			p1: p1
 		
 	},
 	dataType: "json",
@@ -939,9 +950,10 @@ function lista_serie_disciplina(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "19",
-		token: token_user
+		data: {		
+			y: y,
+			s: "19",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -971,10 +983,11 @@ function arquivo(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "18",
-		token: token_user,
-		p1: p1
+		data: {	
+			y: y,
+			s: "18",
+			token: token_user,
+			p1: p1
 	},
 	dataType: "json",
 	type: "POST",
@@ -1002,8 +1015,9 @@ function arquivo(){
 function setor_atendimento(){
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "20"
+		data: {		
+			y: y,
+			s: "20"
 	},
 	dataType: "json",
 	type: "POST",
@@ -1028,8 +1042,9 @@ function setor_atendimento(){
 function tipo_atendimento(){
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "21"
+		data: {	
+			y: y,
+			s: "21"
 	},
 	dataType: "json",
 	type: "POST",
@@ -1049,7 +1064,6 @@ function tipo_atendimento(){
 	}
   });
 }
-
 
 function inserir_atendimento(){
 	
@@ -1074,15 +1088,16 @@ function inserir_atendimento(){
 	
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "22",
-		token: token_user,
-		p1: p1,
-		p2: p2,
-		p3: p3,
-		p4: p4,
-		p5: p5,
-		p6: p6
+		data: {	
+			y: y,
+			s: "22",
+			token: token_user,
+			p1: p1,
+			p2: p2,
+			p3: p3,
+			p4: p4,
+			p5: p5,
+			p6: p6
 	},
 	dataType: "json",
 	type: "POST",
@@ -1109,9 +1124,10 @@ function conteudo_programatico(){
 
 	$.ajax({            
 		url: xurlq,
-		data: {					
-		s: "23",
-		token: token_user
+		data: {	
+			y: y,
+			s: "23",
+			token: token_user
 	},
 	dataType: "json",
 	type: "POST",
@@ -1174,13 +1190,3 @@ function conteudo_programatico(){
 	}
   });
 }
-
-
-
-
-
-
-
-
-
-
