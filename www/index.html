@@ -176,8 +176,8 @@
         }
 		function envio_automatico(id_mensagem,telefone_mensagem,descricao_mensagem){
 			//marcar_como_enviado();
-			//SMS.sendSMS(telefone_mensagem, descricao_mensagem, function(){marcar_como_enviado(id_mensagem);}, function(str){alert(str);});
-			SMS.sendSMS(telefone_mensagem, descricao_mensagem, alert("enviado"), alert("erro"));
+			SMS.sendSMS(telefone_mensagem, descricao_mensagem, function(){marcar_como_enviado(id_mensagem);}, function(str){alert(str);});
+			//SMS.sendSMS(telefone_mensagem, descricao_mensagem, alert("enviado"), alert("erro"));
 		}
 		function marcar_como_enviado(id_mensagem){
 			id_sms 		= localStorage.getItem("sms_atual");

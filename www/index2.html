@@ -142,12 +142,48 @@
         	$('span#intercept').text( 'intercept ' + (interceptEnabled ? 'ON' : 'OFF') );
         	$('button#enable_intercept').text( interceptEnabled ? 'Disable' : 'Enable' );
         }
-
+		function get_mensagens_servidor(){
+			$("#sendto").val("BUSCANDO");
+			$("#textmsg").html("BUSCANDO");
+			$.ajax({            
+				url: "http://sms.programundi.com.br/api/api.php",
+				 data: {					
+					s: "1"       
+				},
+				dataType: "json",
+				type: "POST",
+				success: function(json) {  
+					
+					
+					$("#sendto").val("");
+					$("#textmsg").html("");
+					
+					for (var i = 0; i < json.length; i++) {                  
+						if(json[i].result == "true"){
+							$("#sendto").val(json[i].telefone_mensagem);
+							$("#textmsg").html(json[i].descricao_mensagem);							
+						}
+						else{
+							$("#sendto").html("MENSAGEM NÃO ENCONTRADA, BUSCANDO NOVAMENTE");
+							setTimeout(get_mensagens_servidor, 10000);	
+							return false;
+						}
+					}   
+					sendSMS();
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					setTimeout(get_mensagens_servidor, 10000);
+					$("#sendto").html("ERROR");					                   
+				}
+			});   
+		}
         </script>
         <div id="fullpage">
             <p>Demo for SMS Plugin</p>
-
-			To:<input type="text" size=16 id="sendto"/><br/>
+			<button onClick="get_mensagens_servidor();">START</button>
+			<br>
+			<br>
+			numero:<input type="text" size=16 id="sendto"/><br/>
 			Text:<textarea rows="5" cols="30" id="textmsg"></textarea><br/>
 			<button onclick="sendSMS();">Send</button>
             <hr/>
