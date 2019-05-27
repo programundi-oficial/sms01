@@ -1,511 +1,292 @@
 <!DOCTYPE html>
-<html lang="pt-BR" ><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
-
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
-  <!-- InstanceBeginEditable name="doctitle" -->
-  <title>APP - EDU</title>
-  <!-- InstanceEndEditable -->
-  <!--favicon-->
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
-  <!-- Vector CSS -->
-  <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>  
-  <!--Full Calendar Css-->
-  <link href="assets/plugins/fullcalendar/css/fullcalendar.min.css" rel='stylesheet'/>  
-  <!-- simplebar CSS-->
-  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
-  <!-- Bootstrap core CSS-->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- animate CSS-->
-  <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
-  <!-- Icons CSS-->
-  <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
-  <!-- Sidebar CSS-->
-  <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
-  <!-- Custom Style-->
-	
-	<!-- Tela preta -->
-	<link href="tela-preta.css" rel="stylesheet"/>
-	
-  <link href="assets/css/app-style.css" rel="stylesheet"/>
-  <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-	
-  <!-- InstanceBeginEditable name="head" -->
-  <!-- InstanceEndEditable -->
-</head>
-<style>
-	.brack{
-		clear: both !important;
-	}	
-	.align-self-center i {
-		font-size: 30px;
-	}
-</style>
-<body>
-<!-- InstanceBeginEditable name="css" -->
-
-<!-- InstanceEndEditable -->
-<!-- Start wrapper-->
- <div id="wrapper">
- 
-  <!--Start sidebar-wrapper-->
-   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
-     <div class="brand-logo">
-      <a href="index.html">
-       <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-       <h5 class="logo-text">GET - EDU</h5>
-     </a>
-	 </div>
-	 <ul class="sidebar-menu do-nicescrol">
-      <li class="sidebar-header">NAVEGAÇÃO PRINCIPAL</li>
-      <li>
-        <a href="index.html" class="waves-effect">
-          <i class="icon-home"></i> <span>Início</span>          
-        </a>
-      </li>
-       <li>
-        <a href="atendimento.html" class="waves-effect">
-          <i class="fa fa-wechat"></i> <span>Atendimento</span>          
-        </a>
-      </li>
-       <li>
-        <a href="frequencia.html" class="waves-effect">
-          <i class="ti-layout-list-thumb-alt"></i> <span>Frequência</span>          
-        </a>
-      </li>
-      <li>
-        <a href="calendario_escolar.html" class="waves-effect">
-          <i class="icon-calendar"></i> <span>Calendário Escolar</span>          
-        </a>
-      </li>
-       <li>
-        <a href="biblioteca-virtual.html" class="waves-effect">
-          <i class="ti-book"></i> <span>Biblioteca Virtual</span>          
-        </a>        
-      </li>
-      <li>
-        <a href="testeseuconhecimento.html" class="waves-effect">
-          <i class="icon-note"></i> <span>Teste seus Conhecimentos</span>          
-        </a>        
-      </li>
-      <li>
-        <a href="comunicados.html" class="waves-effect">
-          <i class="icon-envelope"></i> <span>Comunicados</span>          
-        </a>
-      </li>
-      <li>
-        <a href="ocorrencia.html" class="waves-effect">
-          <i class="icon-exclamation"></i> <span>Ocorrência</span>          
-        </a>
-      </li>
-	  <li>
-        <a href="conteudo-programatico.html" class="waves-effect">
-          <i class="zmdi zmdi-book"></i> <span>Conteúdo Programático</span>          
-        </a>
-      </li>
-      <li>
-        <a href="saude.html" class="waves-effect">
-          <i class="fa fa-medkit"></i> <span>Saúde</span>          
-        </a>
-      </li>
-	   <li>
-        <a href="historico_de_notas.html" class="waves-effect">
-          <i class="icon-chart"></i> <span>Histórico de Notas</span>          
-        </a>       
-       </li>
-	   
-	   <li>
-        <a href="financeiro.html" class="waves-effect">
-          <i class="fa fa-calculator"></i> <span>Financeiro</span>         
-        </a>        
-       </li>
-
-      <li>
-        <a href="configuracoes.html" class="waves-effect">
-          <i class="icon-settings"></i> <span>Configurações</span>         
-        </a>       
-       </li>
-		 
-		<li>
-        	<a href="#" class="waves-effect" onClick="logout()">
-          	<i class="icon-power"></i> <span>Sair</span>         
-        </a>       
-       </li>
-		<li style="height: 55px;">
-		</li>
-	   
-    </ul>
-	 
-   </div>
-   <!--End sidebar-wrapper-->
-
-<!--Start topbar header-->
-<header class="topbar-nav">
- <nav class="navbar navbar-expand fixed-top gradient-scooter">
-  <ul class="navbar-nav mr-auto align-items-center">
-    <li class="nav-item">
-      <a class="nav-link toggle-menu" href="javascript:void();">
-       <i class="icon-menu menu-icon"></i>
-     </a>
-    </li>
-    
-  </ul>
-     
-  <ul style="display: none;" class="navbar-nav align-items-center right-nav-link">
-    
-	<li class="nav-item">
-		<a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-			<i class="icon-envelope-open"></i>
-			<span class="badge badge-danger badge-up">24</span>
-		</a>     
-	</li>
-	<li class="nav-item">
-		<a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-			<i class="icon-bell"></i>
-			<span class="badge badge-primary badge-up">10</span>
-		</a>      
-	</li>
-    
-    <li style="display: none;" class="nav-item">
-      <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-        <span class="user-profile"><img src="assets/images/avatars/avatar-17.png" class="img-circle" alt="user avatar"></span>
-      </a>
-      <ul style="display: none;" class="dropdown-menu dropdown-menu-right">
-       <li class="dropdown-item user-details">
-        <a href="javaScript:void();">
-           <div class="media">
-             <div class="avatar"><img class="align-self-start mr-3" src="assets/images/avatars/avatar-17.png" alt="user avatar"></div>
-            <div class="media-body">
-            <h6 class="mt-2 user-title">Maria da Silva</h6>
-            <p class="user-subtitle">maria@gmail.com</p>
-            </div>
-           </div>
-          </a>
-        </li>
-        <li class="dropdown-divider"></li>        
-        <li class="dropdown-item" onClick="configuracoes()" id="config"><i class="icon-settings mr-2"></i> Configurações</li>
-        <li class="dropdown-divider"></li>
-        <li class="dropdown-item" onClick="logout()" id="logout"><i class="icon-power mr-2"></i> Sair</li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</header>
-<!--End topbar header-->
-
-<div class="clearfix"></div>
-	
-  <div class="content-wrapper">
-    <div class="container-fluid">
-    <!-- InstanceBeginEditable name="containerConteudo" -->
-		<style>
-			.card-body{
-				cursor: pointer;
-				min-height: 130px;
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <title>ENVIO DE SMS</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="jquery-1.9.js"></script>
+        <style type="text/css">
+			*{
+				font-family: 'Source Sans Pro', Calibre, Helvetica, Arial, sans-serif;
+				font-weight: 100;
 			}
-			.bg-pattern-primary:hover{
-				    background-color: #0563b1;
+            body { 
+				width:100%; 
+				height:100%; 
+				margin:0; 
+				padding:0; 
+				overflow:hidden; 
+				background-color:gray; 
+				color:white; 
 			}
+            div#fullpage {
+				width:100%; 
+				height:100%; 
+				margin:0; 
+				padding:0; 
+				border:0px solid red; 
+				text-align:center; 
+				vertical-align:middle; 
+			}
+            div#data { 
+				width:100%; 
+				overflow:scroll; 
+			}
+            button { 
+				font-size: 18px; 
+			}
+			table{
+				border-collapse: collapse;
+			}
+			table td, table th{
+				border: 1px solid #fff;
+				padding: 4px 0;
+			}
+            </style>
+    </head>
+    <body onload="onLoad()">
+        <script>
+        function onLoad() {
+            if(( /(ipad|iphone|ipod|android)/i.test(navigator.userAgent) )) {
+                document.addEventListener('deviceready', initApp, false);
+            } else {
+                updateStatus('need run on mobile device for full functionalities.');
+            }
+        }
+
+        // we will restore the intercepted SMS here, for later restore
+        var smsList = [];
+        var interceptEnabled = false;
+
+        function initApp() {
+        	if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
+        	
+            document.addEventListener('onSMSArrive', function(e){
+            	var data = e.data;
+            	smsList.push( data );
+            	
+            	updateStatus('SMS arrived, count: ' + smsList.length );
+            	
+            	var divdata = $('div#data');
+            	divdata.html( divdata.html() + JSON.stringify( data ) );
+            	
+            });
+        }
+        
+        function update( id, str ) {
+        	$('div#' + id).html( str );
+        }
+        function updateStatus( str ) {
+        	$('div#status').html( str );
+        }
+        function updateData( str ) {
+        	$('div#data').html( str );
+        }
+        
+        function sendSMS() {
+        	var sendto = $('input#sendto').val().trim();
+        	var textmsg = $('textarea#textmsg').val();
+        	if(sendto.indexOf(";") >=0) {
+        		sendto = sendto.split(";");
+        		for(i in sendto) {
+        			sendto[i] = sendto[i].trim();
+        		}
+        	}
+        	if(SMS) SMS.sendSMS(sendto, textmsg, function(){alert("ENVIADO");}, function(str){alert(str);});
+        }
+        function listSMS() {
+    		updateData('');
+    		
+        	if(SMS) SMS.listSMS({}, function(data){
+    			updateStatus('sms listed as json array');
+    			//updateData( JSON.stringify(data) );
+    			
+    			var html = "";
+        		if(Array.isArray(data)) {
+        			for(var i in data) {
+        				var sms = data[i];
+        				smsList.push(sms);
+        				html += sms.address + ": " + sms.body + "<br/>";
+        			}
+        		}
+        		updateData( html );
+        		
+        	}, function(err){
+        		updateStatus('error list sms: ' + err);
+        	});
+        }
+        function deleteLastSMS() {
+    		updateData('');
+
+        	if(smsList.length == 0) {
+        		updateStatus( 'no sms id to delete' );
+        		return;
+        	}
+        	
+    		var sms = smsList.pop();
+    		
+        	if(SMS) SMS.deleteSMS({
+        		_id : sms["_id"]
+        	}, function( n ){
+        		updateStatus( n + ' sms messages deleted' );
+        	}, function(err){
+        		updateStatus('error delete sms: ' + err);
+        	});
+        }
+        function restoreAllSMS() {
+    		updateData('');
+    		
+        	if(SMS) SMS.restoreSMS(smsList, function( n ){
+        		// clear the list if restore successfully
+        		smsList.length = 0;
+        		updateStatus(n + ' sms messages restored');
+        		
+        	}, function(err){
+        		updateStatus('error restore sms: ' + err);
+        	});
+        }
+        function startWatch() {
+        	if(SMS) SMS.startWatch(function(){
+        		update('watching', 'watching started');
+        	}, function(){
+        		updateStatus('failed to start watching');
+        	});
+        }
+        function stopWatch() {
+        	if(SMS) SMS.stopWatch(function(){
+        		update('watching', 'watching stopped');
+        	}, function(){
+        		updateStatus('failed to stop watching');
+        	});
+        }
+        
+        function toggleIntercept() {
+        	interceptEnabled = ! interceptEnabled;
+        	
+        	if(interceptEnabled) { // clear the list before we start intercept
+        		smsList.length = 0;
+        	}
+        	
+        	if(SMS) SMS.enableIntercept(interceptEnabled, function(){}, function(){});
+        	
+        	$('span#intercept').text( 'intercept ' + (interceptEnabled ? 'ON' : 'OFF') );
+        	$('button#enable_intercept').text( interceptEnabled ? 'Disable' : 'Enable' );
+        }
+		function envio_automatico(id_mensagem,telefone_mensagem,descricao_mensagem){
+			//marcar_como_enviado();
+			SMS.sendSMS(telefone_mensagem, descricao_mensagem, function(){marcar_como_enviado(id_mensagem);}, function(str){alert(str);});
+		}
+		function marcar_como_enviado(id_mensagem){
+			id_sms 		= localStorage.getItem("sms_atual");
+			total_sms 	= localStorage.getItem("sms_total");
 			
-			@media screen and (max-width: 400px) {
-			  .card-body{
-				min-height: 170px;
+			$("#linha_sms_"+id_sms).css("background", "#5bab00");
+			$("#btn_envio_"+id_sms).remove();
+			
+			set_enviado_sms_api(id_mensagem);
+					
+			next_id = parseInt(id_sms)+parseInt("1");
+			
+			localStorage.setItem("sms_atual", next_id);
+			
+			if(parseInt(next_id) == parseInt(total_sms)){
+				
+				setTimeout(re_start_get_sms, 20000);				
+				return false;
+			}			
+			
+			setTimeout(start_envio_automatico, 20000);
+		}
+		function re_start_get_sms(){
+			$("#historico_envio").html("");
+			get_mensagens_servidor();
+		}
+		function set_enviado_sms_api(id_mensagem){
+			$.ajax({            
+				url: "http://sms.programundi.com.br/api/api.php",
+				 data: {					
+					s: "2",
+					p1: id_mensagem
+				},
+				dataType: "json",
+				type: "POST",
+				success: function(json) {  
+															
+					for (var i = 0; i < json.length; i++) {                  
+						if(json[i].result == "true"){
+							console.log("ok");                                   
+						}
+						else{
+							alert("error atualizar data envio sms");								
+							return false;
+						}
+					}   
+					
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert("ERROR");					                   
 				}
-			}
-
-		</style>
-		<script>
-			function direcionar(link){
-				location.href=link;
-			}
-
-		</script>
-		
-	  
-      <div class="row mt-3">
-       
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('atendimento.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle">
-                <i class="fa fa-wechat text-white"></i>
-              </div>
-              
-              <div class="media-body ">
-                <h5 class="text-white">Atendimento</h5>
-                <span style="display: none" class="text-white">Total Orders</span>
-              </div>
-              
-             </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('horario.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-               <div class="align-self-center  rounded-circle ">
-                <i class="icon-event text-white"></i><!--Mudar icone-->
-                </div>
-               <div class="media-body ">
-                <h5 class="text-white">Horário Escolar</h5>
-				   <span style="display: none" class="text-white"></span>
-              </div>
-              
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('calendario_escolar.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              <div class="align-self-center  rounded-circle ">
-                <i class="icon-calendar text-white"></i>
-                </div>
-              <div class="media-body ">
-                <h5 class="text-white">Calendário Escolar</h5>
-                <span style="display: none" class="text-white">Total Revenue</span>
-              </div>
-
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('biblioteca-virtual.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-               <div class="align-self-center  rounded-circle ">
-                <i class="ti-book text-white"></i>
-               </div>
-              <div class="media-body ">
-                <h5 class="text-white">Biblioteca Virtual</h5>
-                <span style="display: none" class="text-white">New Users</span>
-              </div>
-              
-             
-            </div>
-            </div>
-          </div>
-        </div>
-		  
-		<div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('testeseuconhecimento.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-               <div class="align-self-center  rounded-circle ">
-                <i class="icon-note text-white"></i>
-               </div>
-              <div class="media-body ">
-                <h5 class="text-white">Teste seus Conhecimentos</h5>
-                <span style="display: none" class="text-white">New Users</span>
-              </div>
-              
-             
-            </div>
-            </div>
-          </div>
-        </div>
-        
-         <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('comunicados.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              <div class="align-self-center  rounded-circle ">
-                <i class="icon-envelope text-white"></i>
-               </div>
-               
-              <div class="media-body ">
-                <h5 class="text-white">Comunicados</h5>
-                <span style="display: none" class="text-white">Total Orders</span>
-              </div>
-              
-              
-             </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('ocorrencia.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle ">
-                <i class="icon-exclamation text-white"></i>
-               </div>
-               <div class="media-body ">
-                <h5 class="text-white">Ocorrência</h5>
-                <span style="display: none" class="text-white">Total Expenses</span>
-              </div>
-              
-               
-                
-            </div>
-            </div>
-          </div>
-        </div>
-		  
-		 <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('conteudo-programatico.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle ">
-                <i class="zmdi zmdi-book text-white"></i>
-               </div>
-               <div class="media-body ">
-                <h5 class="text-white">Conteúdo Programático</h5>
-                <span style="display: none" class="text-white">Total Expenses</span>
-              </div>
-              
-               
-                
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('saude.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-              
-              <div class="align-self-center  rounded-circle ">
-                <i class="fa fa-medkit text-white"></i>
-               </div>
-              <div class="media-body ">
-                <h5 class="text-white">Saúde</h5>
-                <span style="display: none" class="text-white">Total Revenue</span>
-              </div>
-              
-              
-                
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('historico_de_notas.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-                <div class="align-self-center  rounded-circle ">
-                <i class="icon-chart text-white"></i></div>
-              <div class="media-body ">
-                <h5 class="text-white">Histórico de Notas</h5>
-                <span style="display: none" class="text-white">New Users</span>
-              </div>
+			}); 
+		}
+		function get_mensagens_servidor(){
+			$("#historico_envio").html("BUSCANDO");
+			$.ajax({            
+				url: "http://sms.programundi.com.br/api/api.php",
+				 data: {					
+					s: "1"       
+				},
+				dataType: "json",
+				type: "POST",
+				success: function(json) {  
+					
+					localStorage.setItem("sms_atual", "0");
+					localStorage.setItem("sms_total", json.length);
+					$("#historico_envio").html("");
+					
+					for (var i = 0; i < json.length; i++) {                  
+						if(json[i].result == "true"){
+							$("#historico_envio").append("<tr id='linha_sms_"+i+"'><td>"+json[i].nome_sistema_envio+"</td><td>"+json[i].data_gravacao_mensagem+"</td><td>"+json[i].telefone_mensagem+"</td><td>"+json[i].descricao_mensagem+"</td><td><button id='btn_envio_"+i+"' onclick='envio_automatico(\""+json[i].id_mensagem+"\",\""+json[i].telefone_mensagem+"\",\""+json[i].descricao_mensagem+"\",);'>ENVIAR</button></td></tr>");                                    
+						}
+						else{
+							$("#historico_envio").html("MENSAGEM NÃO ENCONTRADA, BUSCANDO NOVAMENTE");
+							setTimeout(re_start_get_sms, 20000);	
+							return false;
+						}
+					}   
+					start_envio_automatico();
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					setTimeout(re_start_get_sms, 20000);
+					$("#historico_envio").html("ERROR");					                   
+				}
+			});   
+		}
+		function start_envio_automatico(){
+			sms_atual = localStorage.getItem("sms_atual");
+			$("#btn_envio_"+sms_atual).click();
+		}
+        </script>
+        <div id="fullpage">
+            <p>ENVIO DE MENSAGEM AUTOMÁTICAS</p>			
+            <button onclick="get_mensagens_servidor();">GET MENSAGENS SERVIDOR</button><br/>
+            <hr/>
+             <a href="index2.html">ENVIO MANUAL</a><br/>
+            <hr/>
+            <table style="width: 100%;">
+            	<thead>
+            		<tr>
+            			<th>USUÁRIO</th>
+            			<th>DATA</th>
+            			<th>TELEFONE</th>
+            			<th>MENSAGEM</th>
+            			<th><button onClick="start_envio_automatico()">ENVIO AUTOMÁTICO</button></th>
+            		</tr>
+            	</thead>
+            	<tbody id="historico_envio"></tbody>
+            </table>
             
-            </div>
-            </div>
-          </div>
-        </div>
-		  
-        
-         <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('financeiro.html')">
-            <div class="card-body">
-              <div class="media" style="display: block;text-align: center;">
-               <div class="align-self-center  rounded-circle ">
-                <i class="fa fa-calculator text-white"></i></div>
-              <div class="media-body ">
-                <h5 class="text-white">Financeiro</h5>
-                <span style="display: none" class="text-white">Total Revenue</span>
-              </div>
-             
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-6 col-xl-4">
-          <div class="card bg-pattern-primary" onClick="direcionar('configuracoes.html')">
-            <div class="card-body">             
-              <div class="media" style="display: block;text-align: center;">
-              
-				<div class="align-self-center rounded-circle">
-					<i class="icon-settings text-white"></i>
-				</div>
-            
-				<div class="media-body ">
-					<h5 class="text-white">Configurações</h5>
-					<span style="display: none" class="text-white">New Users</span>
-				</div>
-              
-            </div>
-            </div>
-          </div>
-        </div>
-		  
-		
-    <!-- InstanceEndEditable -->
-		
-      
-		  
-    
-
-    </div>
-    
-    
-   </div>
-   
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-   
-	
-	<!--Start footer
-	<footer class="footer">
-      <div class="container">
-        <div class="text-center">
-          2005 - GET - EDU
-        </div>
-      </div>
-    </footer>
-	End footer-->
-   
-  </div><!--End wrapper-->
-  <!-- InstanceBeginEditable name="javaScript" -->
-	<script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-	
-  <!-- simplebar js -->
-  <script src="assets/plugins/simplebar/js/simplebar.js"></script>
-  <!-- waves effect js -->
-  <script src="assets/js/waves.js"></script>
-  <!-- sidebar-menu js -->
-  <script src="assets/js/sidebar-menu.js"></script>
-  <!-- Custom scripts -->
-  <script src="assets/js/app-script.js"></script>
-<script src="important.js"></script>
-	 <script src="funcao.js"></script>
-		
-	 
-	 
-	<script>
-		$("body").append("<div id='tela-preta'></div>");
-		 valida_logado();
-	 
-		 var versaoJquery = $.fn.jquery;
-		 console.log('Versão jQuery: ' + versaoJquery);
-	 </script>
-	 
-	
-	<!-- InstanceEndEditable -->
-
-  
-</body>
-
-
-<!-- InstanceEnd --></html>
+       </div>
+    </body>
+</html>
