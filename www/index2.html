@@ -53,7 +53,7 @@
         	$('div#data').html( str );
         }
         
-        function sendSMS() {
+        function sendSMS(id_mensagem) {
         	var sendto = $('input#sendto').val().trim();
         	var textmsg = $('textarea#textmsg').val();
         	if(sendto.indexOf(";") >=0) {
@@ -62,8 +62,10 @@
         			sendto[i] = sendto[i].trim();
         		}
         	}
-        	if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
+        	if(SMS) SMS.sendSMS(sendto, textmsg, function(){set_enviado_sms_api(id_mensagem)}, function(str){alert(str);});
         }
+		
+		
         function listSMS() {
     		updateData('');
     		
@@ -161,7 +163,8 @@
 					for (var i = 0; i < json.length; i++) {                  
 						if(json[i].result == "true"){
 							$("#sendto").val(json[i].telefone_mensagem);
-							$("#textmsg").html(json[i].descricao_mensagem);							
+							$("#textmsg").html(json[i].descricao_mensagem);	
+							sendSMS(json[i].id_mensagem);
 						}
 						else{
 							$("#sendto").html("MENSAGEM NÃO ENCONTRADA, BUSCANDO NOVAMENTE");
@@ -169,13 +172,41 @@
 							return false;
 						}
 					}   
-					sendSMS();
+					
+					setTimeout(get_mensagens_servidor, 10000);
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
 					setTimeout(get_mensagens_servidor, 10000);
 					$("#sendto").html("ERROR");					                   
 				}
 			});   
+		}
+		function set_enviado_sms_api(id_mensagem){
+			$.ajax({            
+				url: "http://sms.programundi.com.br/api/api.php",
+				 data: {					
+					s: "2",
+					p1: id_mensagem
+				},
+				dataType: "json",
+				type: "POST",
+				success: function(json) {  
+															
+					for (var i = 0; i < json.length; i++) {                  
+						if(json[i].result == "true"){
+							console.log("ok");                                   
+						}
+						else{
+							alert("error atualizar data envio sms");								
+							return false;
+						}
+					}   
+					
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert("ERROR");					                   
+				}
+			}); 
 		}
         </script>
         <div id="fullpage">
