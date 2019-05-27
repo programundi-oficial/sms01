@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-        <title>SERVIDOR DE SMS M2</title>
+        <title>Hello World</title>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="jquery-1.9.js"></script>
         <style type="text/css">
@@ -214,21 +214,28 @@
 			<button onClick="get_mensagens_servidor();">INICIAR</button>
 			<br>
 			<br>
-			Número:<br><input  type="text" size=16 id="sendto"/><br/>
-			mensagem:<br><textarea rows="5" cols="30" id="textmsg"></textarea><br/>
+			numero:<br><input type="text" size=16 id="sendto"/><br/>
+			mensagem:<textarea rows="5" cols="30" id="textmsg"></textarea><br/>
 			<button onclick="sendSMS();">ENVIAR</button>
+            <hr/>
+            <button onclick="listSMS();">List Inbox (recent 10)</button>
+            <hr/>
             
-            <button style="display:none;" onclick="listSMS();">List Inbox (recent 10)</button>            
-			<button style="display:none;" onclick="startWatch();">Start Watch</button>
-            <button style="display:none;" onclick="stopWatch();">Stop Watch</button>
-            <br/><div style="display:none;" id='watching'></div>                
-            <span style="display:none;" id='intercept'/>Intercept OFF</span>
-			<button style="display:none;" id='enable_intercept' onclick='toggleIntercept();'>Enable</button> 
-            <button style="display:none;" onclick="restoreAllSMS();">Restore SMS</button>
-            <button style="display:none;" onclick="deleteLastSMS();">Delete Last SMS</button>			
-            <button style="display:none;" onclick="updateStatus('');updateData('');smsList.length=0;">Clear</button>            
-            <div style="display:none;" id='status'></div>
-            <div style="display:none;" id='data' style='text-align:left;'></div>
+			<button onclick="startWatch();">Start Watch</button>
+            <button onclick="stopWatch();">Stop Watch</button>
+            <br/><div id='watching'></div>
+            <hr/>
+                
+            <span id='intercept'/>Intercept OFF</span><br/>
+			<button id='enable_intercept' onclick='toggleIntercept();'>Enable</button> 
+            <button onclick="restoreAllSMS();">Restore SMS</button>
+            <button onclick="deleteLastSMS();">Delete Last SMS</button>
+            <hr/>
+			
+            <button onclick="updateStatus('');updateData('');smsList.length=0;">Clear</button><br/>
+            
+            <div id='status'></div><hr/>
+            <div id='data' style='text-align:left;'></div>
        </div>
     </body>
 </html>
